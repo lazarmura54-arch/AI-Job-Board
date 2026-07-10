@@ -1,0 +1,153 @@
+/* =======================
+   TABLET DEVICES
+========================== */
+
+@media screen and (max-width: 992px) {
+  header {
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+  nav {
+    margin-top: 20px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  .hero {
+    height: 420px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .search-area {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .search-area input,
+  .search-area select {
+    width: 100%;
+
+    max-width: 600px;
+  }
+
+  .job-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats {
+    gap: 20px;
+  }
+}
+
+/* =======================
+   MOBILE DEVICES
+========================== */
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 380px;
+
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-btn {
+    padding: 12px 25px;
+  }
+
+  .job-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    width: 90%;
+  }
+
+  .company-list {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .company-list div {
+    width: 85%;
+  }
+
+  .search-area {
+    width: 95%;
+  }
+
+  .search-area input,
+  .search-area select {
+    width: 100%;
+  }
+
+  footer {
+    padding: 30px 15px;
+  }
+}
+
+/* =======================
+   SMALL MOBILE
+========================== */
+
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 22px;
+  }
+
+  nav {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 8px;
+
+    font-size: 15px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .job-card {
+    padding: 18px;
+  }
+
+  .company-logo {
+    width: 50px;
+
+    height: 50px;
+  }
+
+  .btn {
+    font-size: 15px;
+  }
+}

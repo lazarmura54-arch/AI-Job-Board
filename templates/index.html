@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AI Job Board</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+      <div class="logo">
+        <i class="fa-solid fa-briefcase"></i>
+
+        AI Job Board
+      </div>
+
+      <nav>
+        <a href="/">Home</a>
+
+        <a href="#jobs">Jobs</a>
+
+        <a href="#companies">Companies</a>
+
+        <a href="#footer">About</a>
+      </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+      <div class="hero-left">
+        <span class="hero-tag"> 🚀 #1 Software Engineering Job Portal </span>
+
+        <h1>Find Your Dream Software Career</h1>
+
+        <p>
+          Discover thousands of software engineering opportunities from top
+          companies including Google, Microsoft, Amazon, Infosys and OpenAI.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#jobs" class="hero-btn"> Browse Jobs </a>
+
+          <a href="#companies" class="hero-btn-outline"> Top Companies </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="{{ url_for('static', filename='images/hero.png') }}" />
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+      <div class="stat-card">
+        <h2>500+</h2>
+
+        <p>Jobs</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>120+</h2>
+
+        <p>Companies</p>
+      </div>
+
+      <div class="stat-card">
+        <h2>10K+</h2>
+
+        <p>Candidates</p>
+      </div>
+    </section>
+
+    <!-- ================= SEARCH ================= -->
+
+    <!-- ================= SEARCH ================= -->
+
+    <!-- ================= SEARCH SECTION ================= -->
+
+    <section class="search-section">
+      <div class="search-card">
+        <div class="search-title">
+          <h2>Find Your Dream Job</h2>
+
+          <p>
+            Search thousands of software engineering jobs from top companies.
+          </p>
+        </div>
+
+        <div class="search-box">
+          <div class="input-group">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search job title, company or skills..."
+            />
+          </div>
+
+          <div class="input-group">
+            <i class="fa-solid fa-location-dot"></i>
+
+            <select id="locationFilter">
+              <option value="">📍 All Locations</option>
+
+              <option>Bangalore</option>
+
+              <option>Hyderabad</option>
+
+              <option>Chennai</option>
+
+              <option>Pune</option>
+
+              <option>Remote</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <i class="fa-solid fa-briefcase"></i>
+
+            <select id="typeFilter">
+              <option value="">💼 Job Type</option>
+
+              <option>Full Time</option>
+
+              <option>Remote</option>
+            </select>
+          </div>
+
+          <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            Search
+          </button>
+        </div>
+
+        <div class="quick-search">
+          <span>Popular:</span>
+
+          <button class="tag">Python</button>
+
+          <button class="tag">Flask</button>
+
+          <button class="tag">Frontend</button>
+
+          <button class="tag">AI</button>
+
+          <button class="tag">Data Analyst</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED COMPANIES ================= -->
+
+    <section class="companies" id="companies">
+      <h2>Featured Companies</h2>
+
+      <div class="company-list">
+        <div>Google</div>
+
+        <div>Microsoft</div>
+
+        <div>Amazon</div>
+
+        <div>Infosys</div>
+
+        <div>OpenAI</div>
+      </div>
+    </section>
+
+    <!-- ================= JOBS ================= -->
+
+    <section class="job-section" id="jobs">
+      <h2>Latest Jobs</h2>
+
+      <div class="job-container" id="jobContainer">
+        {% for job in jobs %}
+
+        <div class="job-card">
+          <div class="top">
+            <span class="badge"> NEW </span>
+
+            <span class="salary"> {{ job.salary }} </span>
+          </div>
+
+          <div class="company-header">
+            <img
+              src="{{ url_for('static', filename='images/' + job.logo) }}"
+              class="company-logo"
+            />
+
+            <div>
+              <h3>{{ job.title }}</h3>
+
+              <p class="company-name">{{ job.company }}</p>
+            </div>
+          </div>
+
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+
+            {{ job.location }}
+          </p>
+
+          <p>
+            <i class="fa-solid fa-briefcase"></i>
+
+            {{ job.type }}
+          </p>
+
+          <p>
+            <i class="fa-solid fa-user"></i>
+
+            {{ job.experience }}
+          </p>
+
+          <div class="skills">
+            {% for skill in job.skills %}
+
+            <span> {{ skill }} </span>
+
+            {% endfor %}
+          </div>
+          <button class="save-job" data-id="{{ job.id }}">
+            <i class="fa-regular fa-heart"></i>
+
+            Save Job
+          </button>
+
+          <a href="/job/{{ job.id }}" class="btn"> View Details </a>
+        </div>
+
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>AI Job Board</h3>
+
+          <p>
+            A modern job portal developed using Flask, HTML, CSS, and
+            JavaScript. This project was built as part of a Software Engineer
+            assessment.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>About</h3>
+
+          <p>Developed by <strong>Lazar Mura</strong></p>
+
+          <p>B.Tech – Artificial Intelligence & Data Science</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            lazarmura54@gmail.com
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            +91 7287970564
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+
+          <a href="https://github.com/lazarmura54-arch" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+
+          <br /><br />
+
+          <a
+            href="https://www.linkedin.com/in/mura-lazar-949031269/"
+            target="_blank"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <hr />
+
+      <p class="copyright">© 2026 Lazar Mura. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

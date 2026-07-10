@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Software Engineer",
+    "company": "Google",
+    "logo": "google.png",
+    "location": "Bangalore",
+    "salary": "₹18 LPA",
+    "type": "Full Time",
+    "experience": "0 - 2 Years",
+    "description": "Design, develop and maintain scalable web applications using modern technologies.",
+    "responsibilities": [
+      "Develop scalable applications",
+      "Write clean and maintainable code",
+      "Collaborate with cross-functional teams",
+      "Debug and optimize applications"
+    ],
+    "requirements": [
+      "Bachelor's Degree",
+      "Good knowledge of Python",
+      "HTML, CSS, JavaScript",
+      "Git & GitHub"
+    ],
+    "skills": ["Python", "Flask", "HTML", "CSS", "JavaScript", "Git"]
+  },
+  {
+    "id": 2,
+    "title": "Frontend Developer",
+    "company": "Microsoft",
+    "logo": "microsoft.png",
+    "location": "Hyderabad",
+    "salary": "₹15 LPA",
+    "type": "Full Time",
+    "experience": "1 - 3 Years",
+    "description": "Build modern responsive user interfaces and improve user experience.",
+    "responsibilities": [
+      "Develop responsive websites",
+      "Optimize UI performance",
+      "Work with design team"
+    ],
+    "requirements": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    "skills": ["HTML", "CSS", "JavaScript", "Bootstrap"]
+  },
+  {
+    "id": 3,
+    "title": "Python Developer",
+    "company": "Infosys",
+    "logo": "infosys.png",
+    "location": "Chennai",
+    "salary": "₹10 LPA",
+    "type": "Full Time",
+    "experience": "Freshers",
+    "description": "Develop backend applications using Python and Flask.",
+    "responsibilities": [
+      "Develop REST APIs",
+      "Maintain backend systems",
+      "Debug applications"
+    ],
+    "requirements": ["Python", "Flask", "SQL"],
+    "skills": ["Python", "Flask", "SQL", "Git"]
+  },
+  {
+    "id": 4,
+    "title": "AI Engineer",
+    "company": "OpenAI",
+    "logo": "openai.png",
+    "location": "Remote",
+    "salary": "₹28 LPA",
+    "type": "Remote",
+    "experience": "2+ Years",
+    "description": "Develop AI-powered applications using Large Language Models.",
+    "responsibilities": [
+      "Build AI applications",
+      "Train ML models",
+      "Deploy AI systems"
+    ],
+    "requirements": ["Python", "Machine Learning", "LLMs"],
+    "skills": ["Python", "AI", "Machine Learning", "LLM"]
+  },
+  {
+    "id": 5,
+    "title": "Data Analyst",
+    "company": "Amazon",
+    "logo": "amazon.png",
+    "location": "Pune",
+    "salary": "₹12 LPA",
+    "type": "Full Time",
+    "experience": "Freshers",
+    "description": "Analyze business data and prepare dashboards for management.",
+    "responsibilities": [
+      "Analyze datasets",
+      "Prepare reports",
+      "Create dashboards"
+    ],
+    "requirements": ["SQL", "Excel", "Power BI"],
+    "skills": ["SQL", "Excel", "Power BI", "Python"]
+  }
+]
