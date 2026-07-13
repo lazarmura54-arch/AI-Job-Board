@@ -201,7 +201,6 @@ def about():
 
 @app.route("/contact")
 def contact():
-
     return render_template("contact.html")
 
 # ======================================================
@@ -217,6 +216,8 @@ def page_not_found(e):
         "404.html",
         jobs=jobs
     ), 404
+
+
 
 # ======================================================
 # RUN SERVER
