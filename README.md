@@ -1,115 +1,44 @@
-# 🚀 AI Job Board
+# 🤖 AI Job Board
 
-A modern AI-powered Job Board built with **Flask, HTML, CSS, and JavaScript** that helps job seekers discover opportunities from leading technology companies.
-
-The platform provides a clean and responsive interface for browsing jobs, viewing detailed job information, exploring companies, and searching opportunities across multiple technology domains.
+A modern, responsive AI-powered Job Board built with **Flask**, **HTML5**, **CSS3**, **JavaScript**, and **JSON**. The platform helps job seekers discover opportunities in AI, Software Engineering, Data Science, Cloud, DevOps, Cyber Security, and other technology domains through an intuitive and responsive interface.
 
 ---
 
-# 🌐 Live Demo
+## 🌐 Live Demo
 
-🔗 Live Website:
-(Add your deployed URL here)
-
-Example:
-https://your-project.vercel.app
+🔗 **Live Website:** https://ai-job-board-pink.vercel.app/
 
 ---
 
-# 📸 Screenshots
+## 📸 Preview
 
-## Home Page
+> Add screenshots inside a `screenshots/` folder and update the paths below.
 
-(Add screenshot)
-
-## Browse Jobs
-
-(Add screenshot)
-
-## Job Details
-
-(Add screenshot)
-
-## Companies
-
-(Add screenshot)
+| Home                          | Jobs                          |
+| ----------------------------- | ----------------------------- |
+| ![Home](screenshots/home.png) | ![Jobs](screenshots/jobs.png) |
 
 ---
 
 # ✨ Features
 
-## 🏠 Home Page
-
-- Modern Hero Section
-- Animated Statistics
-- Advanced Job Search
-- Featured Job Categories
-- Trusted Companies
-- Featured Tech Jobs
-- Why Choose Us
-- Latest Technologies
-- Testimonials
-- FAQ Section
-- Call-To-Action
-- Responsive Footer
-
----
-
-## 💼 Jobs
-
-- Browse Available Jobs
-- Search Jobs
-- Filter by
-  - Location
-  - Experience
-  - Category
-  - Job Type
-
-- Responsive Job Cards
-- Company Logos
-- Salary Information
-- Skills Display
-- Apply Button
-- Job Details Navigation
+- 🔍 Smart Job Search
+- 💼 Featured Jobs
+- 📄 Detailed Job Pages
+- 🤖 AI & Tech Career Categories
+- 📊 Animated Statistics Counters
+- ⭐ Testimonials Section
+- ❓ Interactive FAQ
+- 📱 Fully Responsive Design
+- 🎨 Modern Glassmorphism UI
+- ⚡ Smooth Animations
+- 📂 JSON-Based Job Data
+- 🐍 Flask Backend
+- 🚀 Vercel Deployment Ready
 
 ---
 
-## 📄 Job Details
-
-- Complete Job Information
-- Company Details
-- Skills Required
-- Responsibilities
-- Qualifications
-- Benefits
-- Job Overview
-- Similar Jobs Recommendation
-- Apply Button
-
----
-
-## 🏢 Companies
-
-- Top Technology Companies
-- Company Profiles
-- Company Details
-- Open Positions
-- Company Information
-
----
-
-## 📱 Responsive Design
-
-Optimized for
-
-- Desktop
-- Laptop
-- Tablet
-- Mobile Devices
-
----
-
-# 🛠️ Technologies Used
+# 🛠 Tech Stack
 
 ### Frontend
 
@@ -117,14 +46,14 @@ Optimized for
 - CSS3
 - JavaScript (ES6)
 - Font Awesome
+- Google Fonts
 
 ### Backend
 
 - Python
 - Flask
-- Jinja2
 
-### Data
+### Database
 
 - JSON
 
@@ -134,160 +63,153 @@ Optimized for
 
 ---
 
-# 📂 Project Structure
+# 📁 Project Structure
 
-```
+```text
 AI-Job-Board/
-
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── data/
-│   └── jobs.json
 │
 ├── static/
 │   ├── css/
 │   ├── js/
 │   ├── images/
-│   └── uploads/
+│   └── data/
+│       └── jobs.json
 │
 ├── templates/
 │   ├── index.html
 │   ├── jobs.html
 │   ├── job-details.html
-│   ├── companies.html
-│   ├── company-details.html
-│   ├── about.html
-│   ├── contact.html
 │   └── 404.html
 │
-└── assets/
+├── app.py
+├── requirements.txt
+├── vercel.json
+└── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+# 🚀 Installation
 
-## Clone Repository
+Clone the repository
 
 ```bash
-git clone https://github.com/your-username/AI-Job-Board.git
+git clone https://github.com/lazarmura54-arch/AI-Job-Board.git
 ```
 
----
-
-## Navigate
+Go to the project
 
 ```bash
 cd AI-Job-Board
 ```
 
----
-
-## Create Virtual Environment
-
-Windows
+Create virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate
+Activate environment
+
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
----
+### Linux / macOS
 
-## Install Requirements
+```bash
+source venv/bin/activate
+```
+
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## Run Application
+Run the project
 
 ```bash
 python app.py
 ```
 
----
-
 Open
 
 ```
-http://127.0.0.1:5000
+http://127.0.0.1:5000/
 ```
 
 ---
 
-# 📌 Project Highlights
+# 📱 Responsive Design
 
-✔ Modern UI/UX
+The project is optimized for:
 
-✔ Responsive Design
-
-✔ Dynamic Job Details
-
-✔ Similar Jobs Recommendation
-
-✔ Company Directory
-
-✔ Search & Filters
-
-✔ Professional Landing Page
-
-✔ Clean Code Structure
-
-✔ Modular CSS Architecture
-
-✔ Flask Backend
+- 💻 Desktop
+- 💻 Laptop
+- 📱 Mobile
+- 📲 Tablet
 
 ---
 
-# 📈 Future Enhancements
+# 📌 Pages
+
+- 🏠 Home
+- 💼 Jobs
+- 📄 Job Details
+- 🚫 Custom 404 Page
+
+---
+
+# 🎯 Future Improvements
 
 - User Authentication
-- Employer Dashboard
 - Resume Upload Backend
-- Job Bookmarking
+- Bookmark Jobs
+- Employer Dashboard
+- Admin Panel
+- Database Integration
 - Email Notifications
-- PostgreSQL/MySQL Integration
-- Admin Dashboard
-- REST API
-- AI Resume Matching
-- AI Job Recommendation
-- Chatbot Assistant
+- AI Job Recommendations
+
+---
+
+# 📷 Screenshots
+
+```
+screenshots/
+│
+├── home.png
+├── jobs.png
+├── job-details.png
+└── mobile.png
+```
 
 ---
 
 # 🤝 Contributing
 
-Contributions are welcome.
+Contributions, issues, and feature requests are welcome.
 
 1. Fork the repository
-
-2. Create your feature branch
+2. Create a feature branch
 
 ```bash
-git checkout -b feature/NewFeature
+git checkout -b feature-name
 ```
 
-3. Commit changes
+3. Commit your changes
 
 ```bash
-git commit -m "Added New Feature"
+git commit -m "Add feature"
 ```
 
 4. Push
 
 ```bash
-git push origin feature/NewFeature
+git push origin feature-name
 ```
 
 5. Open a Pull Request
@@ -298,33 +220,20 @@ git push origin feature/NewFeature
 
 **Mura Lazar**
 
-B.Tech – Artificial Intelligence & Data Science
-
-Python Developer | AI Enthusiast | Full Stack Learner
-
-GitHub:
+🔗 GitHub  
 https://github.com/lazarmura54-arch
 
-LinkedIn:
-(Add LinkedIn Profile)
-
-Email:
-(Add Email)
+🔗 LinkedIn  
+https://www.linkedin.com/in/mura-lazar-949031269/
 
 ---
 
-# ⭐ Support
+# 🌟 Support
 
-If you like this project,
-
-⭐ Star this repository
-
-🍴 Fork it
-
-📢 Share it
+If you found this project useful, please consider giving it a ⭐ on GitHub.
 
 ---
 
-# 📜 License
+## 📄 License
 
 This project is licensed under the MIT License.

@@ -193,10 +193,6 @@
             <li>
               <a href="#categories" class="nav-link">Categories</a>
             </li>
-
-            <li>
-              <a href="#contact" class="nav-link">Contact</a>
-            </li>
           </ul>
 
           <!--========== NAV BUTTONS ==========-->
@@ -779,6 +775,11 @@
             <div
               class="job-card clickable-card"
               data-url="{{ url_for('job_details', job_id=job.id) }}"
+              data-title="{{ job.title | lower }}"
+              data-company="{{ job.company | lower }}"
+              data-location="{{ job.location | lower }}"
+              data-category="{{ job.category | lower }}"
+              data-experience="{{ job.experience | lower }}"
             >
               <!-- Featured Badge -->
 

@@ -119,8 +119,9 @@ def job_details(job_id):
         job=job,
         similar_jobs=similar_jobs
     )
+
 # ======================================================
-# COMPANIES
+# COMPANY DETAILS
 # ======================================================
 
 @app.route("/companies")
@@ -152,57 +153,6 @@ def companies():
         "companies.html",
         companies=list(companies.values())
     )
-
-# ======================================================
-# COMPANY DETAILS
-# ======================================================
-
-@app.route("/company/<company_name>")
-def company_details(company_name):
-
-    companies = load_companies()
-    jobs = load_jobs()
-
-    company = next(
-        (
-            c
-            for c in companies
-            if c["name"].lower() == company_name.lower()
-        ),
-        None,
-    )
-
-    if not company:
-        abort(404)
-
-    company_jobs = [
-        job
-        for job in jobs
-        if job["company"].lower() == company["name"].lower()
-    ]
-
-    return render_template(
-        "company-details.html",
-        company=company,
-        jobs=company_jobs,
-    )
-# ======================================================
-# ABOUT
-# ======================================================
-
-@app.route("/about")
-def about():
-
-    return render_template("about.html")
-
-# ======================================================
-# CONTACT
-# ======================================================
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
-
 # ======================================================
 # 404
 # ======================================================

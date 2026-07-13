@@ -257,26 +257,6 @@
             MOBILE
 ==========================================*/
 
-@media (max-width: 768px) {
-  .hero-stats {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 1rem;
-  }
-
-  .hero-stat {
-    min-width: auto;
-
-    padding: 1.25rem;
-  }
-
-  .hero-stat h2 {
-    font-size: 1.6rem;
-  }
-}
-
 /*==========================================
             SMALL MOBILE
 ==========================================*/
@@ -474,16 +454,34 @@
             MOBILE
 ==========================================*/
 
+/*==========================================
+            MOBILE
+==========================================*/
+
 @media (max-width: 768px) {
   .hero-image {
     margin-top: 2rem;
-
     min-height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-slider {
-    max-width: 100px;
-    height: 300px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 260px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .hero-slider img,
+  .hero-slider .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
   }
 }
 /*==================================================
@@ -743,7 +741,6 @@
 
   .hero-buttons {
     width: 100%;
-
     flex-direction: column;
   }
 
@@ -752,24 +749,13 @@
   }
 
   .hero-card {
-    position: relative;
-
-    margin: 1rem auto;
-
-    left: auto;
-
-    right: auto;
-
-    top: auto;
-
-    bottom: auto;
+    display: none;
   }
 
   .scroll-down {
-    margin-top: 3rem;
+    display: none;
   }
 }
-
 /*==========================================
             SMALL MOBILE
 ==========================================*/
