@@ -1,0 +1,1038 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ==========================================
+                    META TAGS
+    ========================================== -->
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>About Us | AI Job Board</title>
+
+    <meta
+      name="description"
+      content="Learn more about AI Job Board, our mission, vision, and commitment to connecting talented professionals with leading technology companies."
+    />
+
+    <!-- ==========================================
+                    FAVICON
+    ========================================== -->
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+    />
+
+    <!-- ==========================================
+                    GOOGLE FONTS
+    ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ==========================================
+                    FONT AWESOME
+    ========================================== -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- ==========================================
+                    CSS
+    ========================================== -->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- ==========================================
+                LOADER
+========================================== -->
+
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- ==========================================
+                HEADER
+========================================== -->
+
+    <header class="header" id="header">
+      <div class="container">
+        <!-- Logo -->
+
+        <a href="{{ url_for('home') }}" class="logo">
+          <i class="fas fa-robot"></i>
+
+          <span>AI Job Board</span>
+        </a>
+
+        <!-- Navigation -->
+
+        <nav class="navbar" id="navbar">
+          <ul class="nav-menu">
+            <li>
+              <a href="{{ url_for('home') }}"> Home </a>
+            </li>
+
+            <li>
+              <a href="{{ url_for('jobs') }}"> Jobs </a>
+            </li>
+
+            <li>
+              <a href="{{ url_for('companies') }}"> Companies </a>
+            </li>
+
+            <li>
+              <a href="{{ url_for('about') }}" class="active"> About </a>
+            </li>
+
+            <li>
+              <a href="{{ url_for('contact') }}"> Contact </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Header Buttons -->
+
+        <div class="header-buttons">
+          <a href="{{ url_for('jobs') }}" class="btn btn-outline">
+            <i class="fas fa-briefcase"></i>
+
+            Browse Jobs
+          </a>
+
+          <button class="btn btn-primary upload-btn">
+            <i class="fas fa-upload"></i>
+
+            Upload Resume
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==========================================
+                ABOUT HERO
+========================================== -->
+
+    <section class="page-hero about-hero">
+      <div class="container">
+        <!-- Breadcrumb -->
+
+        <div class="breadcrumb">
+          <a href="{{ url_for('home') }}"> Home </a>
+
+          <i class="fas fa-chevron-right"></i>
+
+          <span> About Us </span>
+        </div>
+
+        <!-- Hero Content -->
+
+        <div class="page-hero-content">
+          <span class="section-badge"> About AI Job Board </span>
+
+          <h1>Connecting Talent with Opportunity</h1>
+
+          <p>
+            AI Job Board is a modern recruitment platform built to connect
+            talented professionals with the world's leading technology
+            companies. We simplify job searching through AI-powered
+            recommendations, verified employers, and a seamless application
+            experience.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="{{ url_for('jobs') }}" class="btn btn-primary">
+              <i class="fas fa-briefcase"></i>
+
+              Explore Jobs
+            </a>
+
+            <a href="{{ url_for('companies') }}" class="btn btn-outline">
+              <i class="fas fa-building"></i>
+
+              Top Companies
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+            ABOUT CONTENT STARTS
+========================================== -->
+    <!-- ==========================================
+                ABOUT SECTION
+========================================== -->
+
+    <section class="about-content section">
+      <div class="container">
+        <div class="about-layout">
+          <!-- Left -->
+
+          <div class="about-image">
+            <img
+              src="{{ url_for('static', filename='images/about/about-main.png') }}"
+              alt="About AI Job Board"
+            />
+          </div>
+
+          <!-- Right -->
+
+          <div class="about-info">
+            <span class="section-badge"> Who We Are </span>
+
+            <h2>Helping Professionals Build Better Careers</h2>
+
+            <p>
+              AI Job Board is a next-generation recruitment platform designed to
+              connect talented professionals with the world's leading technology
+              companies. Our platform combines intelligent job discovery,
+              verified employers, and a seamless application process to make
+              hiring easier for everyone.
+            </p>
+
+            <p>
+              Whether you're a fresher beginning your career or an experienced
+              software engineer looking for your next opportunity, AI Job Board
+              helps you discover jobs that match your skills, interests and
+              career goals.
+            </p>
+
+            <div class="about-features">
+              <div class="feature-item">
+                <i class="fas fa-circle-check"></i>
+
+                <span>Verified Employers</span>
+              </div>
+
+              <div class="feature-item">
+                <i class="fas fa-circle-check"></i>
+
+                <span>AI-Powered Recommendations</span>
+              </div>
+
+              <div class="feature-item">
+                <i class="fas fa-circle-check"></i>
+
+                <span>Fast & Easy Applications</span>
+              </div>
+
+              <div class="feature-item">
+                <i class="fas fa-circle-check"></i>
+
+                <span>Career Growth Resources</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+            MISSION & VISION
+========================================== -->
+
+    <section class="mission-vision section">
+      <div class="container">
+        <div class="mission-grid">
+          <!-- Mission -->
+
+          <div class="mission-card">
+            <div class="mission-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+
+            <h3>Our Mission</h3>
+
+            <p>
+              To simplify job searching by connecting talented professionals
+              with trusted companies through a modern, transparent and
+              intelligent hiring platform.
+            </p>
+          </div>
+
+          <!-- Vision -->
+
+          <div class="mission-card">
+            <div class="mission-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+
+            <h3>Our Vision</h3>
+
+            <p>
+              To become one of the world's most trusted career platforms by
+              empowering job seekers and helping organizations hire exceptional
+              talent faster.
+            </p>
+          </div>
+
+          <!-- Goal -->
+
+          <div class="mission-card">
+            <div class="mission-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+
+            <h3>Our Goal</h3>
+
+            <p>
+              Build a recruitment ecosystem where technology, innovation and
+              human potential come together to create better career
+              opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+            PLATFORM STATISTICS
+========================================== -->
+
+    <section class="about-stats section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"> Our Growth </span>
+
+          <h2>Trusted by Thousands</h2>
+
+          <p>
+            Our platform continues to grow with job seekers, employers and
+            successful placements every day.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <i class="fas fa-briefcase"></i>
+
+            <h2 class="counter" data-target="10000">0</h2>
+
+            <p>Active Jobs</p>
+          </div>
+
+          <div class="stat-card">
+            <i class="fas fa-building"></i>
+
+            <h2 class="counter" data-target="500">0</h2>
+
+            <p>Hiring Companies</p>
+          </div>
+
+          <div class="stat-card">
+            <i class="fas fa-users"></i>
+
+            <h2 class="counter" data-target="1000000">0</h2>
+
+            <p>Registered Users</p>
+          </div>
+
+          <div class="stat-card">
+            <i class="fas fa-award"></i>
+
+            <h2>95%</h2>
+
+            <p>Hiring Success Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                OUR IMPACT
+========================================== -->
+
+    <section class="our-impact section">
+      <div class="container">
+        <div class="content-card">
+          <h2>
+            <i class="fas fa-earth-asia"></i>
+
+            Making an Impact
+          </h2>
+
+          <p>
+            Every day, AI Job Board helps talented professionals discover
+            exciting opportunities while enabling companies to find skilled
+            candidates quickly and efficiently.
+          </p>
+
+          <div class="impact-grid">
+            <div class="impact-item">
+              <i class="fas fa-user-graduate"></i>
+
+              <h4>Freshers</h4>
+
+              <p>Launch your career with entry-level opportunities.</p>
+            </div>
+
+            <div class="impact-item">
+              <i class="fas fa-laptop-code"></i>
+
+              <h4>Developers</h4>
+
+              <p>Discover software engineering roles worldwide.</p>
+            </div>
+
+            <div class="impact-item">
+              <i class="fas fa-brain"></i>
+
+              <h4>AI Engineers</h4>
+
+              <p>Explore cutting-edge AI and Machine Learning careers.</p>
+            </div>
+
+            <div class="impact-item">
+              <i class="fas fa-building"></i>
+
+              <h4>Employers</h4>
+
+              <p>Connect with talented professionals faster.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+            WHY CHOOSE US STARTS
+========================================== -->
+    <!-- ==========================================
+            WHY CHOOSE AI JOB BOARD
+========================================== -->
+
+    <section class="why-about section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"> Why Choose Us </span>
+
+          <h2>Everything You Need To Build Your Career</h2>
+
+          <p>
+            We provide a modern recruitment experience designed for both job
+            seekers and employers.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <i class="fas fa-robot"></i>
+
+            <h3>AI Powered Matching</h3>
+
+            <p>
+              Intelligent recommendations connect candidates with jobs matching
+              their skills and interests.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-building-circle-check"></i>
+
+            <h3>Verified Companies</h3>
+
+            <p>
+              Apply only to trusted employers with authentic job opportunities.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-bolt"></i>
+
+            <h3>One-Click Apply</h3>
+
+            <p>
+              Save time by applying to jobs quickly using your uploaded resume.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-user-graduate"></i>
+
+            <h3>Career Guidance</h3>
+
+            <p>
+              Interview tips, resume guidance and career resources to help you
+              succeed.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-globe"></i>
+
+            <h3>Global Opportunities</h3>
+
+            <p>
+              Discover remote, hybrid and onsite jobs from companies around the
+              world.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-headset"></i>
+
+            <h3>Dedicated Support</h3>
+
+            <p>Our support team is ready to assist whenever you need help.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                CORE VALUES
+========================================== -->
+
+    <section class="core-values section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"> Our Values </span>
+
+          <h2>Principles That Drive Us</h2>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <i class="fas fa-handshake"></i>
+
+            <h3>Trust</h3>
+
+            <p>
+              Building lasting relationships through honesty, transparency and
+              verified opportunities.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <i class="fas fa-lightbulb"></i>
+
+            <h3>Innovation</h3>
+
+            <p>
+              Continuously improving our platform using modern technology and
+              AI.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <i class="fas fa-users"></i>
+
+            <h3>Community</h3>
+
+            <p>Bringing together job seekers, employers and recruiters.</p>
+          </div>
+
+          <div class="value-card">
+            <i class="fas fa-star"></i>
+
+            <h3>Excellence</h3>
+
+            <p>Delivering the highest quality user experience every day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                PLATFORM FEATURES
+========================================== -->
+
+    <section class="platform-features section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"> Platform Features </span>
+
+          <h2>Designed For Modern Careers</h2>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-search"></i>
+
+            <h3>Smart Job Search</h3>
+
+            <p>Search thousands of opportunities using advanced filters.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-upload"></i>
+
+            <h3>Resume Upload</h3>
+
+            <p>Upload your resume once and apply instantly.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-bookmark"></i>
+
+            <h3>Save Jobs</h3>
+
+            <p>Bookmark interesting opportunities and apply later.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-building"></i>
+
+            <h3>Company Profiles</h3>
+
+            <p>Learn about company culture, ratings and open positions.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-chart-line"></i>
+
+            <h3>Career Growth</h3>
+
+            <p>
+              Discover resources that help accelerate your professional journey.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fas fa-mobile-screen-button"></i>
+
+            <h3>Responsive Design</h3>
+
+            <p>Access AI Job Board on desktop, tablet and mobile devices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+            OUR TEAM STARTS
+========================================== -->
+    <!-- ==========================================
+                OUR TEAM
+========================================== -->
+
+    <section class="our-team section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"> Meet Our Team </span>
+
+          <h2>Passionate People Behind AI Job Board</h2>
+
+          <p>
+            Our team is dedicated to building an intelligent hiring platform
+            that connects talented professionals with leading companies.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+
+          <div class="team-card">
+            <img
+              src="{{ url_for('static', filename='images/team/team1.jpg') }}"
+              alt="Founder"
+            />
+
+            <h3>Alex Johnson</h3>
+
+            <span> Founder & CEO </span>
+
+            <p>
+              Passionate about AI, recruitment technology, and helping
+              professionals grow.
+            </p>
+
+            <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+
+          <div class="team-card">
+            <img
+              src="{{ url_for('static', filename='images/team/team2.jpg') }}"
+              alt="CTO"
+            />
+
+            <h3>Sophia Williams</h3>
+
+            <span> Chief Technology Officer </span>
+
+            <p>
+              Leads platform architecture, cloud infrastructure and AI
+              innovation.
+            </p>
+
+            <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+
+          <div class="team-card">
+            <img
+              src="{{ url_for('static', filename='images/team/team3.jpg') }}"
+              alt="Designer"
+            />
+
+            <h3>Daniel Brown</h3>
+
+            <span> UI/UX Designer </span>
+
+            <p>
+              Creates intuitive user experiences for both recruiters and job
+              seekers.
+            </p>
+
+            <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-dribbble"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Member 4 -->
+
+          <div class="team-card">
+            <img
+              src="{{ url_for('static', filename='images/team/team4.jpg') }}"
+              alt="Developer"
+            />
+
+            <h3>Emma Davis</h3>
+
+            <span> Full Stack Engineer </span>
+
+            <p>Develops scalable web applications using modern technologies.</p>
+
+            <div class="team-social">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+            TECHNOLOGY STACK
+========================================== -->
+
+    <section class="tech-stack section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"> Technology </span>
+
+          <h2>Built With Modern Technologies</h2>
+        </div>
+
+        <div class="tech-grid">
+          <div class="tech-item">
+            <i class="fab fa-python"></i>
+
+            <h4>Python</h4>
+          </div>
+
+          <div class="tech-item">
+            <i class="fab fa-html5"></i>
+
+            <h4>HTML5</h4>
+          </div>
+
+          <div class="tech-item">
+            <i class="fab fa-css3-alt"></i>
+
+            <h4>CSS3</h4>
+          </div>
+
+          <div class="tech-item">
+            <i class="fab fa-js"></i>
+
+            <h4>JavaScript</h4>
+          </div>
+
+          <div class="tech-item">
+            <i class="fas fa-database"></i>
+
+            <h4>JSON API</h4>
+          </div>
+
+          <div class="tech-item">
+            <i class="fas fa-server"></i>
+
+            <h4>Flask</h4>
+          </div>
+
+          <div class="tech-item">
+            <i class="fab fa-github"></i>
+
+            <h4>GitHub</h4>
+          </div>
+
+          <div class="tech-item">
+            <i class="fas fa-cloud"></i>
+
+            <h4>Vercel</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                OUR JOURNEY
+========================================== -->
+
+    <section class="timeline section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"> Our Journey </span>
+
+          <h2>Milestones</h2>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+
+            <div class="timeline-content">
+              <h3>Idea Started</h3>
+
+              <p>
+                AI Job Board was planned to simplify technology recruitment.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+
+            <div class="timeline-content">
+              <h3>Platform Launch</h3>
+
+              <p>Successfully launched with AI-powered job recommendations.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">Future</div>
+
+            <div class="timeline-content">
+              <h3>Global Expansion</h3>
+
+              <p>
+                Expanding worldwide with more employers, jobs and AI features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+            CALL TO ACTION STARTS
+========================================== -->
+    <!-- ==========================================
+                CALL TO ACTION
+========================================== -->
+
+    <section class="about-cta">
+      <div class="container">
+        <div class="cta-box">
+          <span class="section-badge"> Join Our Community </span>
+
+          <h2>Ready To Find Your Dream Job?</h2>
+
+          <p>
+            Discover thousands of opportunities from leading companies, upload
+            your resume, and take the next step in your career.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="{{ url_for('jobs') }}" class="btn btn-primary">
+              <i class="fas fa-briefcase"></i>
+
+              Browse Jobs
+            </a>
+
+            <button class="btn btn-outline upload-btn">
+              <i class="fas fa-upload"></i>
+
+              Upload Resume
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                NEWSLETTER
+========================================== -->
+
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-card">
+          <h2>Stay Updated</h2>
+
+          <p>
+            Subscribe to receive the latest AI jobs, software engineering
+            openings, career tips, and company updates.
+          </p>
+
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+            />
+
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                    FOOTER
+========================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- ================= LEFT ================= -->
+
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="{{ url_for('static', filename='images/logo/ai-logo.png') }}"
+                alt="AI Job Board"
+              />
+
+              <h3>AI Job Board</h3>
+            </div>
+
+            <p>
+              Discover AI, Software Engineering, Cloud, DevOps, Data Science and
+              Full Stack opportunities from leading technology companies.
+            </p>
+          </div>
+
+          <!-- ================= ABOUT ================= -->
+
+          <div class="footer-column">
+            <h3>About</h3>
+
+            <p>Developed by <strong>Lazar Mura</strong></p>
+
+            <p>B.Tech – Artificial Intelligence & Data Science</p>
+
+            <p>Built using Flask, HTML, CSS & JavaScript</p>
+          </div>
+
+          <!-- ================= CONTACT ================= -->
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+
+            <div class="footer-contact">
+              <p>
+                <i class="fas fa-envelope"></i>
+                <span>lazarmura54@gmail.com</span>
+              </p>
+
+              <p>
+                <i class="fas fa-phone"></i>
+                <span>+91 7287970564</span>
+              </p>
+
+              <p>
+                <i class="fas fa-location-dot"></i>
+                <span>Bengaluru, India</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- ================= CONNECT ================= -->
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+
+            <div class="footer-social">
+              <a href="https://github.com/lazarmura54-arch" target="_blank">
+                <i class="fab fa-github"></i>
+
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/mura-lazar-949031269/"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin"></i>
+
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="footer-bottom">
+          © 2026 <strong>Lazar Mura</strong>. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================
+                BACK TO TOP
+========================================== -->
+
+    <button id="backToTop" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ==========================================
+                JAVASCRIPT
+========================================== -->
+
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/hero-slider.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/faq.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/resume-upload.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ==========================================
+                    META TAGS
+    ========================================== -->
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Browse Jobs | AI Job Board</title>
+
+    <meta
+      name="description"
+      content="Browse thousands of AI, Software Engineering, Data Science, Cloud and Full Stack jobs."
+    />
+
+    <!-- ==========================================
+                    FAVICON
+    ========================================== -->
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}"
+    />
+
+    <!-- ==========================================
+                    GOOGLE FONT
+    ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ==========================================
+                    FONT AWESOME
+    ========================================== -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- ==========================================
+                    CSS
+    ========================================== -->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/jobs-page.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- ==========================================
+                LOADER
+========================================== -->
+
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- ==========================================
+                HEADER
+========================================== -->
+
+    <header class="header">
+      <div class="container navbar">
+        <!-- Logo -->
+        <a href="{{ url_for('home') }}" class="logo">
+          <i class="fa-solid fa-robot"></i>
+          <span>AI Job Board</span>
+        </a>
+
+        <!-- Navigation -->
+        <ul class="nav-links">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('jobs') }}">Jobs</a></li>
+          <li><a href="#companies">Companies</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="jobs-page">
+      <!-- ==========================
+            HERO SEARCH
+    =========================== -->
+
+      <section class="jobs-hero">
+        <div class="container">
+          <div class="jobs-hero-content">
+            <span class="hero-badge">
+              <i class="fa-solid fa-briefcase"></i>
+              10,000+ Verified Tech Jobs
+            </span>
+
+            <h1>
+              Browse Your Dream
+              <span>Tech Career</span>
+            </h1>
+
+            <p>
+              Search thousands of verified AI, Software Engineering, Cloud,
+              DevOps, Cyber Security and Data Science jobs from top companies.
+            </p>
+          </div>
+
+          <!-- Search Box -->
+
+          <div class="jobs-search-box">
+            <div class="search-input-wrapper">
+              <i class="fas fa-search"></i>
+
+              <input
+                type="text"
+                id="jobSearch"
+                placeholder="Search jobs, companies or skills..."
+              />
+            </div>
+
+            <button id="searchBtn" class="btn btn-primary">
+              <i class="fas fa-search"></i>
+              Search
+            </button>
+          </div>
+
+          <!-- Popular Searches -->
+
+          <div class="popular-searches">
+            <span>Popular:</span>
+
+            <a href="#">Python</a>
+
+            <a href="#">AI Engineer</a>
+
+            <a href="#">React</a>
+
+            <a href="#">Java</a>
+
+            <a href="#">Remote</a>
+
+            <a href="#">Internship</a>
+
+            <a href="#">Fresher</a>
+          </div>
+        </div>
+      </section>
+      <!--==========================================
+            JOBS LAYOUT
+===========================================-->
+
+      <section class="jobs-layout">
+        <div class="container">
+          <div class="jobs-wrapper">
+            <!-- Sidebar -->
+
+            <aside class="jobs-sidebar">
+              <div class="filter-card">
+                <h3>
+                  <i class="fas fa-filter"></i>
+                  Filters
+                </h3>
+
+                <div class="filter-group">
+                  <label>Location</label>
+
+                  <select id="locationFilter">
+                    <option>All Locations</option>
+                    <option>Bangalore</option>
+                    <option>Hyderabad</option>
+                    <option>Chennai</option>
+                    <option>Remote</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label>Experience</label>
+
+                  <select id="experienceFilter">
+                    <option>All</option>
+                    <option>Fresher</option>
+                    <option>0-2 Years</option>
+                    <option>3-5 Years</option>
+                    <option>5+ Years</option>
+                  </select>
+                </div>
+
+                <div class="filter-group">
+                  <label>Job Type</label>
+
+                  <select id="typeFilter">
+                    <option>All</option>
+                    <option>Full Time</option>
+                  </select>
+
+                  <label>Work Mode</label>
+
+                  <select id="modeFilter">
+                    <option>All</option>
+                    <option>Onsite</option>
+                    <option>Hybrid</option>
+                    <option>Remote</option>
+                  </select>
+                </div>
+
+                <button id="clearFilters" class="btn btn-outline">
+                  <i class="fa-solid fa-rotate-left"></i>
+                  Clear Filters
+                </button>
+              </div>
+            </aside>
+
+            <!-- Job List -->
+
+            <div class="jobs-content">
+              <div class="jobs-topbar">
+                <h2><span id="jobCount">{{ jobs|length }}</span> Jobs Found</h2>
+
+                <select id="sortFilter">
+                  <option>Latest</option>
+                  <option>Highest Salary</option>
+                  <option>Featured</option>
+                </select>
+              </div>
+
+              <!-- Job cards -->
+
+              <div class="jobs-list">
+                {% for job in jobs %}
+
+                <div
+                  class="job-row"
+                  data-title="{{ job.title|lower }}"
+                  data-company="{{ job.company|lower }}"
+                  data-location="{{ job.location|lower }}"
+                  data-type="{{ job.type|lower }}"
+                  data-mode="{{ job.mode|lower }}"
+                  data-experience="{{ job.experience|lower }}"
+                  data-skills="{{ job.skills|join(' ')|lower }}"
+                >
+                  <!-- Company Logo -->
+                  <div class="job-logo">
+                    <img
+                      src="{{ url_for('static', filename='images/companies/' + job.logo) }}"
+                      alt="{{ job.company }}"
+                    />
+                  </div>
+
+                  <!-- Job Details -->
+                  <div class="job-main">
+                    <h3 class="job-title">{{ job.title }}</h3>
+
+                    <div class="job-company">
+                      <i class="fa-solid fa-building"></i>
+
+                      {{ job.company }} &nbsp;&nbsp;
+
+                      <i class="fa-solid fa-location-dot"></i>
+
+                      {{ job.location }}
+                    </div>
+
+                    <div class="job-meta">
+                      <span>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        {{ job.salary }}
+                      </span>
+
+                      <span>
+                        <i class="fa-solid fa-briefcase"></i>
+                        {{ job.type }}
+                      </span>
+
+                      <span>
+                        <i class="fa-solid fa-user-clock"></i>
+                        {{ job.experience }}
+                      </span>
+                    </div>
+
+                    <div class="job-skills">
+                      {% for skill in job.skills %}
+                      <span class="skill-badge">{{ skill }}</span>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons -->
+                  <div class="job-actions">
+                    <a
+                      href="{{ url_for('job_details', job_id=job.id) }}"
+                      class="btn btn-outline"
+                    >
+                      <i class="fa-regular fa-eye"></i>
+                      View Details
+                    </a>
+
+                    <a
+                      href="{{ job.apply_link }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn btn-primary"
+                    >
+                      <i class="fa-solid fa-paper-plane"></i>
+                      Apply Now
+                    </a>
+                  </div>
+                </div>
+
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+            FOOTER STARTS
+========================================== -->
+    <!-- ==========================================
+                FOOTER
+========================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- ================= LEFT ================= -->
+
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="{{ url_for('static', filename='images/logo/ai-logo.png') }}"
+                alt="AI Job Board"
+              />
+
+              <h3>AI Job Board</h3>
+            </div>
+
+            <p>
+              Discover AI, Software Engineering, Cloud, DevOps, Data Science and
+              Full Stack opportunities from leading technology companies.
+            </p>
+          </div>
+
+          <!-- ================= ABOUT ================= -->
+
+          <div class="footer-column">
+            <h3>About</h3>
+
+            <p>Developed by <strong>Lazar Mura</strong></p>
+
+            <p>B.Tech – Artificial Intelligence & Data Science</p>
+
+            <p>Built using Flask, HTML, CSS & JavaScript</p>
+          </div>
+
+          <!-- ================= CONTACT ================= -->
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+
+            <div class="footer-contact">
+              <p>
+                <i class="fas fa-envelope"></i>
+                <span>lazarmura54@gmail.com</span>
+              </p>
+
+              <p>
+                <i class="fas fa-phone"></i>
+                <span>+91 7287970564</span>
+              </p>
+
+              <p>
+                <i class="fas fa-location-dot"></i>
+                <span>Bengaluru, India</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- ================= CONNECT ================= -->
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+
+            <div class="footer-social">
+              <a href="https://github.com/lazarmura54-arch" target="_blank">
+                <i class="fab fa-github"></i>
+
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/mura-lazar-949031269/"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin"></i>
+
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="footer-bottom">
+          © 2026 <strong>Lazar Mura</strong>. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <!-- ==========================================
+                BACK TO TOP
+========================================== -->
+
+    <button id="backToTop" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ==========================================
+                JAVASCRIPT
+========================================== -->
+
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/hero-slider.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/faq.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/resume-upload.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/jobs-page.js') }}"></script>
+  </body>
+</html>

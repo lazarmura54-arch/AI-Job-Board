@@ -1,0 +1,262 @@
+/*==================================================
+                AI JOB BOARD
+                BASE.CSS
+==================================================*/
+
+/*==========================================
+                CSS RESET
+==========================================*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*==========================================
+                HTML
+==========================================*/
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/*==========================================
+                BODY
+==========================================*/
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: var(--line-height);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*==========================================
+                SELECTION
+==========================================*/
+
+::selection {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/*==========================================
+                SCROLLBAR
+==========================================*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef2ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/*==========================================
+                IMAGES
+==========================================*/
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*==========================================
+                LINKS
+==========================================*/
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/*==========================================
+                LISTS
+==========================================*/
+
+ul {
+  list-style: none;
+}
+
+/*==========================================
+                BUTTONS
+==========================================*/
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+/*==========================================
+                INPUTS
+==========================================*/
+
+input,
+select,
+textarea {
+  width: 100%;
+}
+
+/*==========================================
+                CONTAINER
+==========================================*/
+
+.container {
+  width: min(90%, var(--container-width));
+  margin-inline: auto;
+}
+
+/*==========================================
+                WRAPPER
+==========================================*/
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/*==========================================
+                SECTIONS
+==========================================*/
+
+section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: var(--fs-4xl);
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/*==========================================
+                HEADINGS
+==========================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-light);
+}
+
+/*==========================================
+                ICONS
+==========================================*/
+
+i {
+  line-height: 1;
+}
+
+/*==========================================
+                UTILITIES
+==========================================*/
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+/*==========================================
+                LOADER
+==========================================*/
+
+body.loading {
+  overflow: hidden;
+}
+
+/*==========================================
+                MOBILE
+==========================================*/
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 92%;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: var(--fs-3xl);
+  }
+}

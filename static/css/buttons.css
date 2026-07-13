@@ -1,0 +1,276 @@
+/*==================================================
+                AI JOB BOARD
+                BUTTONS.CSS
+==================================================*/
+
+/*==========================================
+                BASE BUTTON
+==========================================*/
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+
+  padding: 14px 28px;
+
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+
+  border: none;
+  border-radius: var(--radius-round);
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+/*==========================================
+            PRIMARY BUTTON
+==========================================*/
+
+.btn-primary {
+  background: var(--primary-gradient);
+
+  color: var(--white);
+
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+/*==========================================
+            OUTLINE BUTTON
+==========================================*/
+
+.btn-outline {
+  background: transparent;
+
+  color: var(--primary-color);
+
+  border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+
+  color: var(--white);
+}
+
+/*==========================================
+            SECONDARY BUTTON
+==========================================*/
+
+.btn-secondary {
+  background: var(--secondary-gradient);
+
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+/*==========================================
+            GHOST BUTTON
+==========================================*/
+
+.btn-ghost {
+  background: transparent;
+
+  color: var(--text-color);
+}
+
+.btn-ghost:hover {
+  background: rgba(79, 70, 229, 0.08);
+}
+
+/*==========================================
+            SUCCESS BUTTON
+==========================================*/
+
+.btn-success {
+  background: var(--success-color);
+
+  color: var(--white);
+}
+
+.btn-success:hover {
+  filter: brightness(0.92);
+}
+
+/*==========================================
+            DANGER BUTTON
+==========================================*/
+
+.btn-danger {
+  background: var(--danger-color);
+
+  color: var(--white);
+}
+
+.btn-danger:hover {
+  filter: brightness(0.92);
+}
+
+/*==========================================
+            BUTTON SIZES
+==========================================*/
+
+.btn-sm {
+  padding: 10px 20px;
+
+  font-size: 0.9rem;
+}
+
+.btn-lg {
+  padding: 18px 36px;
+
+  font-size: 1.05rem;
+}
+
+/*==========================================
+            ICON BUTTON
+==========================================*/
+
+.btn-icon {
+  width: 48px;
+
+  height: 48px;
+
+  padding: 0;
+
+  border-radius: 50%;
+}
+
+/*==========================================
+            FULL WIDTH
+==========================================*/
+
+.btn-block {
+  width: 100%;
+}
+
+/*==========================================
+            BUTTON ICONS
+==========================================*/
+
+.btn i {
+  font-size: 1rem;
+}
+
+/*==========================================
+            DISABLED
+==========================================*/
+
+.btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  pointer-events: none;
+}
+
+/*==========================================
+            LOADING
+==========================================*/
+
+.btn.loading {
+  pointer-events: none;
+}
+
+.btn.loading::after {
+  content: "";
+
+  width: 18px;
+
+  height: 18px;
+
+  border: 3px solid rgba(255, 255, 255, 0.4);
+
+  border-top-color: #fff;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+/*==========================================
+            RIPPLE EFFECT
+==========================================*/
+
+.btn::before {
+  content: "";
+
+  position: absolute;
+
+  width: 0;
+
+  height: 0;
+
+  left: 50%;
+
+  top: 50%;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  transition: 0.55s;
+}
+
+.btn:hover::before {
+  width: 320px;
+
+  height: 320px;
+}
+
+/*==========================================
+            BUTTON FOCUS
+==========================================*/
+
+.btn:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.35);
+
+  outline-offset: 4px;
+}
+
+/*==========================================
+            ANIMATION
+==========================================*/
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*==========================================
+            MOBILE
+==========================================*/
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+}

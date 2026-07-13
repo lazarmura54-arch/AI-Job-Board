@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--==============================
+            META
+    ==============================-->
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ job.title }} | AI Job Board</title>
+
+    <!--==============================
+            GOOGLE FONT
+    ==============================-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--==============================
+            FONT AWESOME
+    ==============================-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+
+    <!--==============================
+            CSS
+    ==============================-->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/job-details.css') }}"
+    />
+  </head>
+
+  <body>
+    <!--==================================================
+                    HEADER
+===================================================-->
+
+    <header class="header">
+      <div class="container">
+        <div class="navbar">
+          <!--==============================
+                    LOGO
+            ==============================-->
+
+          <a href="{{ url_for('home') }}" class="logo">
+            <img
+              src="{{ url_for('static',
+                    filename='images/logo/ai-logo.png') }}"
+              alt="AI Job Board"
+            />
+
+            <div class="logo-content">
+              <h2>AI Job Board</h2>
+
+              <span> Find Your Dream Career </span>
+            </div>
+          </a>
+
+          <!--==============================
+                    NAVIGATION
+            ==============================-->
+
+          <nav>
+            <ul class="nav-menu">
+              <li>
+                <a href="{{ url_for('home') }}" class="nav-link"> Home </a>
+              </li>
+
+              <li>
+                <a href="{{ url_for('jobs') }}" class="nav-link active">
+                  Jobs
+                </a>
+              </li>
+
+              <li>
+                <a href="{{ url_for('companies') }}" class="nav-link">
+                  Companies
+                </a>
+              </li>
+
+              <li>
+                <a href="{{ url_for('about') }}" class="nav-link"> About </a>
+              </li>
+
+              <li>
+                <a href="{{ url_for('contact') }}" class="nav-link">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!--==================================================
+                JOB DETAILS PAGE
+===================================================-->
+
+    <section class="page-header">
+      <div class="container">
+        <!--==============================
+                BREADCRUMB
+        ==============================-->
+
+        <div class="breadcrumb">
+          <a href="{{ url_for('home') }}"> Home </a>
+
+          <i class="fas fa-angle-right"></i>
+
+          <a href="{{ url_for('jobs') }}"> Jobs </a>
+
+          <i class="fas fa-angle-right"></i>
+
+          <span> {{ job.title }} </span>
+        </div>
+
+        <!--==================================================
+                    HERO SECTION
+        ===================================================-->
+
+        <section class="job-hero">
+          <!--==============================
+                    LEFT SIDE
+            ==============================-->
+
+          <div class="hero-left">
+            <div class="company-logo">
+              <img
+                src="{{ url_for('static',
+            filename='images/companies/' + job.logo) }}"
+                alt="{{ job.company }}"
+              />
+            </div>
+
+            <div class="hero-content">
+              {% if job.featured %}
+
+              <span class="featured-badge">
+                <i class="fas fa-star"></i>
+
+                Featured Opportunity
+              </span>
+
+              {% endif %}
+
+              <h1>{{ job.title }}</h1>
+
+              <h2>{{ job.company }}</h2>
+
+              <div class="hero-meta">
+                <span>
+                  <i class="fas fa-location-dot"></i>
+
+                  {{ job.location }}
+                </span>
+
+                <span>
+                  <i class="fas fa-briefcase"></i>
+
+                  {{ job.type }}
+                </span>
+
+                <span>
+                  <i class="fas fa-laptop-house"></i>
+
+                  {{ job.mode }}
+                </span>
+
+                <span>
+                  <i class="fas fa-user-clock"></i>
+
+                  {{ job.experience }}
+                </span>
+
+                <span>
+                  <i class="fas fa-wallet"></i>
+
+                  {{ job.salary }}
+                </span>
+              </div>
+
+              <div class="hero-tags">
+                <span> {{ job.category }} </span>
+
+                <span> Posted {{ job.posted }} </span>
+              </div>
+            </div>
+          </div>
+          <!--==============================
+                    RIGHT SIDE
+            ==============================-->
+
+          <div class="hero-right">
+            <a
+              href="{{ job.apply_link }}"
+              target="_blank"
+              class="btn apply-btn"
+            >
+              <i class="fas fa-paper-plane"></i>
+
+              Apply Now
+            </a>
+
+            <button class="btn save-btn">
+              <i class="far fa-bookmark"></i>
+
+              Save Job
+            </button>
+
+            <button class="btn share-btn">
+              <i class="fas fa-share-alt"></i>
+
+              Share
+            </button>
+          </div>
+        </section>
+
+        <!--==================================================
+                    MAIN CONTENT
+        ===================================================-->
+
+        <section class="job-content">
+          <div class="job-layout">
+            <!--==========================================
+                            LEFT COLUMN
+                ===========================================-->
+
+            <div class="job-main">
+              <!--==============================
+                            JOB DESCRIPTION
+                    ==============================-->
+
+              <div class="content-card">
+                <div class="card-title">
+                  <i class="fas fa-file-lines"></i>
+
+                  <h3>Job Description</h3>
+                </div>
+
+                <p class="job-description">{{ job.description }}</p>
+              </div>
+
+              <!--==============================
+                            REQUIRED SKILLS
+                    ==============================-->
+
+              <div class="content-card">
+                <div class="card-title">
+                  <i class="fas fa-code"></i>
+
+                  <h3>Required Skills</h3>
+                </div>
+
+                <div class="skills-wrapper">
+                  {% for skill in job.skills %}
+
+                  <span class="skill-tag"> {{ skill }} </span>
+
+                  {% endfor %}
+                </div>
+              </div>
+
+              <!--==============================
+                            JOB INFORMATION
+                    ==============================-->
+
+              <div class="content-card">
+                <div class="card-title">
+                  <i class="fas fa-circle-info"></i>
+
+                  <h3>Job Information</h3>
+                </div>
+
+                <div class="info-grid">
+                  <div class="info-item">
+                    <i class="fas fa-building"></i>
+
+                    <div>
+                      <span> Company </span>
+
+                      <strong> {{ job.company }} </strong>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-location-dot"></i>
+
+                    <div>
+                      <span> Location </span>
+
+                      <strong> {{ job.location }} </strong>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-briefcase"></i>
+
+                    <div>
+                      <span> Employment Type </span>
+
+                      <strong> {{ job.type }} </strong>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-laptop-house"></i>
+
+                    <div>
+                      <span> Work Mode </span>
+
+                      <strong> {{ job.mode }} </strong>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-user-clock"></i>
+
+                    <div>
+                      <span> Experience </span>
+
+                      <strong> {{ job.experience }} </strong>
+                    </div>
+                  </div>
+
+                  <div class="info-item">
+                    <i class="fas fa-wallet"></i>
+
+                    <div>
+                      <span> Salary </span>
+
+                      <strong> {{ job.salary }} </strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--==============================
+                            WHY JOIN THIS COMPANY
+                    ==============================-->
+
+              <div class="content-card">
+                <div class="card-title">
+                  <i class="fas fa-lightbulb"></i>
+
+                  <h3>Why Join This Company?</h3>
+                </div>
+
+                <div class="benefits-grid">
+                  <div class="benefit-card">
+                    <i class="fas fa-rocket"></i>
+
+                    <h4>Career Growth</h4>
+
+                    <p>
+                      Work on challenging projects that help accelerate your
+                      professional development.
+                    </p>
+                  </div>
+
+                  <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+
+                    <h4>Great Team</h4>
+
+                    <p>
+                      Collaborate with experienced engineers and industry
+                      professionals.
+                    </p>
+                  </div>
+
+                  <div class="benefit-card">
+                    <i class="fas fa-laptop-code"></i>
+
+                    <h4>Modern Technology</h4>
+
+                    <p>
+                      Gain hands-on experience with the latest software
+                      development tools.
+                    </p>
+                  </div>
+
+                  <div class="benefit-card">
+                    <i class="fas fa-award"></i>
+
+                    <h4>Competitive Benefits</h4>
+
+                    <p>
+                      Attractive compensation, learning opportunities, and
+                      long-term career growth.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!--==========================================
+                                COMPANY HIGHLIGHTS
+                    ===========================================-->
+
+              <div class="content-card">
+                <div class="card-title">
+                  <i class="fas fa-building"></i>
+
+                  <h3>Company Highlights</h3>
+                </div>
+
+                <div class="highlight-grid">
+                  <div class="highlight-card">
+                    <i class="fas fa-globe"></i>
+
+                    <h4>Global Presence</h4>
+
+                    <p>
+                      Work with talented teams across multiple countries and
+                      contribute to products used worldwide.
+                    </p>
+                  </div>
+
+                  <div class="highlight-card">
+                    <i class="fas fa-brain"></i>
+
+                    <h4>Innovation</h4>
+
+                    <p>
+                      Build next-generation AI-powered applications using modern
+                      technologies and best practices.
+                    </p>
+                  </div>
+
+                  <div class="highlight-card">
+                    <i class="fas fa-graduation-cap"></i>
+
+                    <h4>Learning Culture</h4>
+
+                    <p>
+                      Continuous learning through mentorship, certifications and
+                      internal training.
+                    </p>
+                  </div>
+
+                  <div class="highlight-card">
+                    <i class="fas fa-handshake"></i>
+
+                    <h4>Work Culture</h4>
+
+                    <p>
+                      Inclusive workplace focused on teamwork, creativity and
+                      professional growth.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--==========================================
+                            RIGHT SIDEBAR
+                ===========================================-->
+
+            <aside class="job-sidebar">
+              <!--==================================
+                            APPLY CARD
+                    ==================================-->
+
+              <!--==================================
+                            JOB OVERVIEW
+                    ==================================-->
+
+              <div class="sidebar-card">
+                <h3>
+                  <i class="fas fa-briefcase"></i>
+
+                  Job Overview
+                </h3>
+
+                <div class="overview-list">
+                  <div class="overview-item">
+                    <i class="fas fa-building"></i>
+
+                    <div>
+                      <span>Company</span>
+
+                      <strong>{{ job.company }}</strong>
+                    </div>
+                  </div>
+
+                  <div class="overview-item">
+                    <i class="fas fa-location-dot"></i>
+
+                    <div>
+                      <span>Location</span>
+
+                      <strong>{{ job.location }}</strong>
+                    </div>
+                  </div>
+
+                  <div class="overview-item">
+                    <i class="fas fa-user-clock"></i>
+
+                    <div>
+                      <span>Experience</span>
+
+                      <strong>{{ job.experience }}</strong>
+                    </div>
+                  </div>
+
+                  <div class="overview-item">
+                    <i class="fas fa-wallet"></i>
+
+                    <div>
+                      <span>Salary</span>
+
+                      <strong>{{ job.salary }}</strong>
+                    </div>
+                  </div>
+
+                  <div class="overview-item">
+                    <i class="fas fa-briefcase"></i>
+
+                    <div>
+                      <span>Employment</span>
+
+                      <strong>{{ job.type }}</strong>
+                    </div>
+                  </div>
+
+                  <div class="overview-item">
+                    <i class="fas fa-laptop-house"></i>
+
+                    <div>
+                      <span>Work Mode</span>
+
+                      <strong>{{ job.mode }}</strong>
+                    </div>
+                  </div>
+
+                  <div class="overview-item">
+                    <i class="fas fa-layer-group"></i>
+
+                    <div>
+                      <span>Category</span>
+
+                      <strong>{{ job.category }}</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--==================================
+                            SHARE JOB
+                    ==================================-->
+
+              <div class="sidebar-card">
+                <h3>
+                  <i class="fas fa-share-alt"></i>
+
+                  Share this Job
+                </h3>
+
+                <div class="share-icons">
+                  <a href="#">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="fab fa-x-twitter"></i>
+                  </a>
+
+                  <a href="#">
+                    <i class="fas fa-link"></i>
+                  </a>
+                </div>
+              </div>
+              <!--==================================
+                            APPLICATION TIPS
+                    ==================================-->
+
+              <div class="sidebar-card">
+                <h3>
+                  <i class="fas fa-lightbulb"></i>
+
+                  Application Tips
+                </h3>
+
+                <ul class="tips-list">
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+
+                    Customize your resume for this role.
+                  </li>
+
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+
+                    Highlight your projects and internships.
+                  </li>
+
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+
+                    Keep your LinkedIn profile updated.
+                  </li>
+
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+
+                    Apply as early as possible.
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!--==========================================
+                    SIMILAR JOBS
+        ===========================================-->
+
+        <section class="similar-jobs">
+          <div class="section-heading">
+            <span> More Opportunities </span>
+
+            <h2>Similar Jobs</h2>
+
+            <p>Explore other opportunities that match your interests.</p>
+          </div>
+
+          <div class="similar-grid">
+            {% for similar in similar_jobs %} {% if similar.id != job.id %}
+
+            <div class="similar-card">
+              <div class="similar-top">
+                <img
+                  src="{{ url_for('static',
+            filename='images/companies/' + similar.logo) }}"
+                  alt="{{ similar.company }}"
+                />
+
+                <div>
+                  <h3>{{ similar.title }}</h3>
+
+                  <p>{{ similar.company }}</p>
+                </div>
+              </div>
+
+              <div class="similar-meta">
+                <span>
+                  <i class="fas fa-location-dot"></i>
+
+                  {{ similar.location }}
+                </span>
+
+                <span>
+                  <i class="fas fa-briefcase"></i>
+
+                  {{ similar.type }}
+                </span>
+
+                <span>
+                  <i class="fas fa-wallet"></i>
+
+                  {{ similar.salary }}
+                </span>
+              </div>
+
+              <div class="similar-skills">
+                {% for skill in similar.skills[:3] %}
+
+                <span> {{ skill }} </span>
+
+                {% endfor %}
+              </div>
+
+              <a
+                href="{{ url_for('job_details',
+                            job_id=similar.id) }}"
+                class="details-btn"
+              >
+                View Details
+              </a>
+            </div>
+
+            {% endif %} {% endfor %}
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ==========================================
+                FOOTER
+========================================== -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- ================= LEFT ================= -->
+
+          <div class="footer-column">
+            <div class="footer-logo">
+              <img
+                src="{{ url_for('static', filename='images/logo/ai-logo.png') }}"
+                alt="AI Job Board"
+              />
+
+              <h3>AI Job Board</h3>
+            </div>
+
+            <p>
+              Discover AI, Software Engineering, Cloud, DevOps, Data Science and
+              Full Stack opportunities from leading technology companies.
+            </p>
+          </div>
+
+          <!-- ================= ABOUT ================= -->
+
+          <div class="footer-column">
+            <h3>About</h3>
+
+            <p>Developed by <strong>Lazar Mura</strong></p>
+
+            <p>B.Tech – Artificial Intelligence & Data Science</p>
+
+            <p>Built using Flask, HTML, CSS & JavaScript</p>
+          </div>
+
+          <!-- ================= CONTACT ================= -->
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+
+            <div class="footer-contact">
+              <p>
+                <i class="fas fa-envelope"></i>
+                <span>lazarmura54@gmail.com</span>
+              </p>
+
+              <p>
+                <i class="fas fa-phone"></i>
+                <span>+91 7287970564</span>
+              </p>
+
+              <p>
+                <i class="fas fa-location-dot"></i>
+                <span>Bengaluru, India</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- ================= CONNECT ================= -->
+
+          <div class="footer-column">
+            <h3>Connect</h3>
+
+            <div class="footer-social">
+              <a href="https://github.com/lazarmura54-arch" target="_blank">
+                <i class="fab fa-github"></i>
+
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/mura-lazar-949031269/"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin"></i>
+
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="footer-bottom">
+          © 2026 <strong>Lazar Mura</strong>. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!--==========================================
+                JAVASCRIPT
+===========================================-->
+
+    <script src="{{ url_for('static',
+        filename='js/navbar.js') }}"></script>
+
+    <script src="{{ url_for('static',
+        filename='js/app.js') }}"></script>
+
+    <script src="{{ url_for('static',
+        filename='js/search.js') }}"></script>
+  </body>
+</html>

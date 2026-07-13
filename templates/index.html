@@ -1,15 +1,139 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--=========================================
+                    META TAGS
+    ==========================================-->
+
     <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>AI Job Board</title>
+    <title>AI Job Board | Find AI, Software & Tech Jobs</title>
+
+    <meta
+      name="description"
+      content="Discover AI, Software Engineering, Data Science, Machine Learning, Cloud and DevOps jobs from top companies."
+    />
+
+    <meta
+      name="keywords"
+      content="AI Jobs, Software Engineer Jobs, Python Jobs, Machine Learning Jobs, Data Science Jobs"
+    />
+
+    <meta name="author" content="Mura Lazar" />
+
+    <!--=========================================
+                    GOOGLE FONTS
+    ==========================================-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--=========================================
+                    FONT AWESOME
+    ==========================================-->
 
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+
+    <!--=========================================
+                    CSS FILES
+    ==========================================-->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/variables.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/utilities.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/buttons.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navbar.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/hero.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/statistics.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/search.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/companies.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/jobs.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/categories.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/why.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/testimonials.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/faq.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/cta.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/tech.css') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/footer.css') }}"
     />
 
     <link
@@ -17,320 +141,1995 @@
       href="{{ url_for('static', filename='css/responsive.css') }}"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      href="{{ url_for('static', filename='css/style.css') }}"
     />
   </head>
 
   <body>
-    <!-- ================= NAVBAR ================= -->
+    <!--=========================================
+                    PAGE LOADER
+    ==========================================-->
 
-    <header>
-      <div class="logo">
-        <i class="fa-solid fa-briefcase"></i>
+    <div class="loader" id="loader">
+      <div class="loader-spinner"></div>
+    </div>
 
-        AI Job Board
+    <!--=========================================
+                    HEADER
+    ==========================================-->
+
+    <header class="header" id="header">
+      <div class="container">
+        <nav class="navbar">
+          <!--========== LOGO ==========-->
+
+          <a href="/" class="logo">
+            <i class="fa-solid fa-robot"></i>
+
+            <span>AI Job Board</span>
+          </a>
+
+          <!--========== MENU ==========-->
+
+          <ul class="nav-menu" id="navMenu">
+            <li>
+              <a href="#home" class="nav-link active">Home</a>
+            </li>
+
+            <li>
+              <a href="#search" class="nav-link">Search</a>
+            </li>
+
+            <li>
+              <a href="#companies" class="nav-link">Companies</a>
+            </li>
+
+            <li>
+              <a href="#jobs" class="nav-link">Jobs</a>
+            </li>
+
+            <li>
+              <a href="#categories" class="nav-link">Categories</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+
+          <!--========== NAV BUTTONS ==========-->
+
+          <div class="nav-actions">
+            <a href="#jobs" class="btn btn-outline"> Browse Jobs </a>
+
+            <a href="#upload" class="btn btn-primary"> Upload Resume </a>
+          </div>
+
+          <!--========== MOBILE MENU ==========-->
+
+          <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
       </div>
-
-      <nav>
-        <a href="/">Home</a>
-
-        <a href="#jobs">Jobs</a>
-
-        <a href="#companies">Companies</a>
-
-        <a href="#footer">About</a>
-      </nav>
     </header>
 
-    <!-- ================= HERO ================= -->
+    <!--=========================================
+                    MAIN
+    ==========================================-->
 
-    <!-- ================= HERO ================= -->
+    <main>
+      <!--=========================================
+                    HERO SECTION
+==========================================-->
 
-    <section class="hero">
-      <div class="hero-left">
-        <span class="hero-tag"> 🚀 #1 Software Engineering Job Portal </span>
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-wrapper">
+            <!--==================================
+                    HERO CONTENT
+            ===================================-->
 
-        <h1>Find Your Dream Software Career</h1>
+            <div class="hero-content">
+              <div class="hero-badge">
+                <i class="fa-solid fa-sparkles"></i>
 
-        <p>
-          Discover thousands of software engineering opportunities from top
-          companies including Google, Microsoft, Amazon, Infosys and OpenAI.
-        </p>
+                <span>AI Powered Job Platform</span>
+              </div>
 
-        <div class="hero-buttons">
-          <a href="#jobs" class="hero-btn"> Browse Jobs </a>
+              <h1>
+                Find Your Dream
 
-          <a href="#companies" class="hero-btn-outline"> Top Companies </a>
-        </div>
-      </div>
+                <span>Tech Career</span>
 
-      <div class="hero-right">
-        <img src="{{ url_for('static', filename='images/hero.png') }}" />
-      </div>
-    </section>
+                Faster Than Ever
+              </h1>
 
-    <!-- ================= STATS ================= -->
+              <p>
+                Explore thousands of verified AI, Software Engineering, Data
+                Science, Cloud, Cyber Security, and Full Stack jobs from the
+                world's leading companies.
+              </p>
 
-    <section class="stats">
-      <div class="stat-card">
-        <h2>500+</h2>
+              <div class="hero-buttons">
+                <a href="#jobs" class="btn btn-primary">
+                  <i class="fa-solid fa-briefcase"></i>
 
-        <p>Jobs</p>
-      </div>
+                  Explore Jobs
+                </a>
 
-      <div class="stat-card">
-        <h2>120+</h2>
+                <a href="#upload" class="btn btn-outline">
+                  <i class="fa-solid fa-upload"></i>
 
-        <p>Companies</p>
-      </div>
+                  Upload Resume
+                </a>
+              </div>
 
-      <div class="stat-card">
-        <h2>10K+</h2>
+              <!--==================================
+                        HERO STATS
+                ===================================-->
 
-        <p>Candidates</p>
-      </div>
-    </section>
+              <div class="hero-stats">
+                <div class="hero-stat">
+                  <h2>10K+</h2>
 
-    <!-- ================= SEARCH ================= -->
+                  <span>Active Jobs</span>
+                </div>
 
-    <!-- ================= SEARCH ================= -->
+                <div class="hero-stat">
+                  <h2>500+</h2>
 
-    <!-- ================= SEARCH SECTION ================= -->
+                  <span>Companies</span>
+                </div>
 
-    <section class="search-section">
-      <div class="search-card">
-        <div class="search-title">
-          <h2>Find Your Dream Job</h2>
+                <div class="hero-stat">
+                  <h2>25K+</h2>
 
-          <p>
-            Search thousands of software engineering jobs from top companies.
-          </p>
-        </div>
+                  <span>Job Seekers</span>
+                </div>
+              </div>
+            </div>
 
-        <div class="search-box">
-          <div class="input-group">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <!--==================================
+                    HERO IMAGE
+            ===================================-->
 
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="Search job title, company or skills..."
-            />
-          </div>
+            <div class="hero-image">
+              <!-- Floating Card -->
 
-          <div class="input-group">
-            <i class="fa-solid fa-location-dot"></i>
+              <div class="hero-card top">
+                <i class="fa-solid fa-briefcase"></i>
 
-            <select id="locationFilter">
-              <option value="">📍 All Locations</option>
+                <div class="hero-card-content">
+                  <h4>2,500+</h4>
 
-              <option>Bangalore</option>
+                  <p>Jobs Posted Today</p>
+                </div>
+              </div>
 
-              <option>Hyderabad</option>
+              <!-- Hero Slider -->
 
-              <option>Chennai</option>
+              <div class="hero-slider" id="heroSlider">
+                <img
+                  src="{{ url_for('static', filename='images/hero/AIML.png') }}"
+                  alt="AI & Machine Learning"
+                  class="slide active"
+                />
 
-              <option>Pune</option>
+                <img
+                  src="{{ url_for('static', filename='images/hero/Backend.png') }}"
+                  alt="Backend Development"
+                  class="slide"
+                />
 
-              <option>Remote</option>
-            </select>
-          </div>
+                <img
+                  src="{{ url_for('static', filename='images/hero/DataScience.png') }}"
+                  alt="Data Science"
+                  class="slide"
+                />
 
-          <div class="input-group">
-            <i class="fa-solid fa-briefcase"></i>
+                <img
+                  src="{{ url_for('static', filename='images/hero/DevOps.png') }}"
+                  alt="DevOps"
+                  class="slide"
+                />
 
-            <select id="typeFilter">
-              <option value="">💼 Job Type</option>
+                <img
+                  src="{{ url_for('static', filename='images/hero/Frontend.png') }}"
+                  alt="Frontend Development"
+                  class="slide"
+                />
+              </div>
 
-              <option>Full Time</option>
+              <!-- Floating Card -->
 
-              <option>Remote</option>
-            </select>
-          </div>
+              <div class="hero-card bottom">
+                <i class="fa-solid fa-users"></i>
 
-          <button class="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
+                <div class="hero-card-content">
+                  <h4>95%</h4>
 
-            Search
-          </button>
-        </div>
+                  <p>Hiring Success</p>
+                </div>
+              </div>
 
-        <div class="quick-search">
-          <span>Popular:</span>
+              <!-- Slider Dots -->
 
-          <button class="tag">Python</button>
+              <div class="slider-dots">
+                <span class="dot active"></span>
 
-          <button class="tag">Flask</button>
+                <span class="dot"></span>
 
-          <button class="tag">Frontend</button>
-
-          <button class="tag">AI</button>
-
-          <button class="tag">Data Analyst</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FEATURED COMPANIES ================= -->
-
-    <section class="companies" id="companies">
-      <h2>Featured Companies</h2>
-
-      <div class="company-list">
-        <div>Google</div>
-
-        <div>Microsoft</div>
-
-        <div>Amazon</div>
-
-        <div>Infosys</div>
-
-        <div>OpenAI</div>
-      </div>
-    </section>
-
-    <!-- ================= JOBS ================= -->
-
-    <section class="job-section" id="jobs">
-      <h2>Latest Jobs</h2>
-
-      <div class="job-container" id="jobContainer">
-        {% for job in jobs %}
-
-        <div class="job-card">
-          <div class="top">
-            <span class="badge"> NEW </span>
-
-            <span class="salary"> {{ job.salary }} </span>
-          </div>
-
-          <div class="company-header">
-            <img
-              src="{{ url_for('static', filename='images/' + job.logo) }}"
-              class="company-logo"
-            />
-
-            <div>
-              <h3>{{ job.title }}</h3>
-
-              <p class="company-name">{{ job.company }}</p>
+                <span class="dot"></span>
+              </div>
             </div>
           </div>
 
-          <p>
-            <i class="fa-solid fa-location-dot"></i>
+          <!--==================================
+                SCROLL DOWN
+        ===================================-->
 
-            {{ job.location }}
-          </p>
+          <div class="scroll-down">
+            <span>Scroll Down</span>
 
-          <p>
-            <i class="fa-solid fa-briefcase"></i>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+        </div>
+      </section>
+      <!--=========================================
+                STATISTICS SECTION
+==========================================-->
 
-            {{ job.type }}
-          </p>
+      <section class="statistics" id="statistics">
+        <div class="container">
+          <!--==================================
+                SECTION HEADER
+        ===================================-->
 
-          <p>
-            <i class="fa-solid fa-user"></i>
+          <div class="section-header">
+            <span class="section-badge"> Platform Statistics </span>
 
-            {{ job.experience }}
-          </p>
+            <h2 class="section-title">Trusted by Thousands of Professionals</h2>
 
-          <div class="skills">
-            {% for skill in job.skills %}
+            <p class="section-description">
+              Our AI Job Board connects talented professionals with the world's
+              leading technology companies through intelligent job matching.
+            </p>
+          </div>
 
-            <span> {{ skill }} </span>
+          <!--==================================
+                STATISTICS GRID
+        ===================================-->
+
+          <div class="statistics-grid">
+            <!--========== CARD 1 ==========-->
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+
+              <h2 class="stat-number">
+                <span class="counter" data-target="10000">0</span>+
+              </h2>
+
+              <p class="stat-label">Active Jobs</p>
+            </div>
+
+            <!--========== CARD 2 ==========-->
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+
+              <h2 class="stat-number">
+                <span class="counter" data-target="500">0</span>+
+              </h2>
+
+              <p class="stat-label">Hiring Companies</p>
+            </div>
+
+            <!--========== CARD 3 ==========-->
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+
+              <h2 class="stat-number">
+                <span class="counter" data-target="25000">0</span>+
+              </h2>
+
+              <p class="stat-label">Registered Candidates</p>
+            </div>
+
+            <!--========== CARD 4 ==========-->
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+
+              <h2 class="stat-number">
+                <span class="counter" data-target="98">0</span>%
+              </h2>
+
+              <p class="stat-label">Success Rate</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--=========================================
+                JOB SEARCH SECTION
+==========================================-->
+
+      <section class="search" id="search">
+        <div class="container">
+          <!--==================================
+                SECTION HEADER
+        ===================================-->
+
+          <div class="section-header">
+            <span class="section-badge"> Smart Job Search </span>
+
+            <h2 class="section-title">Find Your Perfect Job in Seconds</h2>
+
+            <p class="section-description">
+              Search thousands of verified AI, Software Engineering, Data
+              Science, Cloud, DevOps, Cyber Security and Full Stack jobs using
+              intelligent filters.
+            </p>
+          </div>
+
+          <!--==================================
+            SEARCH CARD
+===================================-->
+
+          <div class="search-card">
+            <form id="jobSearchForm" class="search-form">
+              <!--========== JOB TITLE ==========-->
+
+              <div class="search-group">
+                <label for="jobSearch"> Job Title </label>
+
+                <div class="input-box">
+                  <div class="input-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+
+                  <input
+                    type="text"
+                    id="jobSearch"
+                    placeholder="AI Engineer, Python Developer..."
+                  />
+                </div>
+              </div>
+
+              <!--========== LOCATION ==========-->
+
+              <div class="search-group">
+                <label for="locationSearch"> Location </label>
+
+                <div class="input-box">
+                  <div class="input-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+
+                  <input
+                    type="text"
+                    id="locationSearch"
+                    placeholder="Bangalore, Hyderabad, Remote"
+                  />
+                </div>
+              </div>
+
+              <!--========== CATEGORY ==========-->
+
+              <div class="search-group">
+                <label for="categoryFilter"> Category </label>
+
+                <div class="input-box">
+                  <div class="input-icon">
+                    <i class="fa-solid fa-layer-group"></i>
+                  </div>
+
+                  <select id="categoryFilter">
+                    <option value="">All Categories</option>
+
+                    <option value="Artificial Intelligence">
+                      Artificial Intelligence
+                    </option>
+
+                    <option value="Machine Learning">Machine Learning</option>
+
+                    <option value="Data Science">Data Science</option>
+
+                    <option value="Frontend Development">
+                      Frontend Development
+                    </option>
+
+                    <option value="Backend Development">
+                      Backend Development
+                    </option>
+
+                    <option value="Full Stack Development">
+                      Full Stack Development
+                    </option>
+
+                    <option value="Cloud Computing">Cloud Computing</option>
+
+                    <option value="DevOps">DevOps</option>
+
+                    <option value="Cyber Security">Cyber Security</option>
+                  </select>
+                </div>
+              </div>
+
+              <!--========== EXPERIENCE ==========-->
+
+              <div class="search-group">
+                <label for="experienceFilter"> Experience </label>
+
+                <div class="input-box">
+                  <div class="input-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                  </div>
+
+                  <select id="experienceFilter">
+                    <option value="">All Levels</option>
+
+                    <option value="Fresher">Fresher</option>
+
+                    <option value="1-2 Years">1 - 2 Years</option>
+
+                    <option value="3-5 Years">3 - 5 Years</option>
+
+                    <option value="5+ Years">5+ Years</option>
+                  </select>
+                </div>
+              </div>
+
+              <!--========== SEARCH BUTTON ==========-->
+
+              <div class="search-button">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+
+                  <span>Search Jobs</span>
+                </button>
+              </div>
+            </form>
+
+            <!--========== POPULAR SEARCHES ==========-->
+
+            <div class="popular-searches">
+              <span class="popular-title"> Popular Searches </span>
+
+              <button type="button" class="search-chip">AI Engineer</button>
+
+              <button type="button" class="search-chip">Python</button>
+
+              <button type="button" class="search-chip">React</button>
+
+              <button type="button" class="search-chip">Java</button>
+
+              <button type="button" class="search-chip">Remote</button>
+
+              <button type="button" class="search-chip">Internship</button>
+
+              <button type="button" class="search-chip">Fresher</button>
+
+              <button type="button" class="search-chip">Data Science</button>
+            </div>
+          </div>
+
+          <!--==================================
+                QUICK FILTERS
+        ===================================-->
+
+          <div class="quick-filters">
+            <span>Popular Searches :</span>
+
+            <button class="filter-chip">AI Engineer</button>
+
+            <button class="filter-chip">Python</button>
+
+            <button class="filter-chip">React</button>
+
+            <button class="filter-chip">Java</button>
+
+            <button class="filter-chip">Remote</button>
+
+            <button class="filter-chip">Internship</button>
+
+            <button class="filter-chip">Fresher</button>
+
+            <button class="filter-chip">Data Science</button>
+          </div>
+        </div>
+      </section>
+      <!--=========================================
+            FEATURED COMPANIES SECTION
+==========================================-->
+
+      <!--=========================================
+            FEATURED COMPANIES SECTION
+==========================================-->
+
+      <section class="companies" id="companies">
+        <div class="container">
+          <!--========== SECTION HEADER ==========-->
+
+          <div class="section-header">
+            <span class="section-badge"> Top Companies </span>
+
+            <h2 class="section-title">Trusted by Leading Companies</h2>
+
+            <p class="section-description">
+              Explore career opportunities from the world's leading technology
+              companies hiring talented software engineers, AI engineers, cloud
+              professionals, and data scientists.
+            </p>
+          </div>
+
+          <!--========== COMPANIES GRID ==========-->
+
+          <div class="companies-grid">
+            <!-- Google -->
+
+            <div class="company-card simple-company-card">
+              <div class="company-logo">
+                <img
+                  src="{{ url_for('static', filename='images/companies/google.png') }}"
+                  alt="Google"
+                />
+              </div>
+
+              <h3 class="company-name">Google</h3>
+            </div>
+
+            <!-- Microsoft -->
+
+            <div class="company-card simple-company-card">
+              <div class="company-logo">
+                <img
+                  src="{{ url_for('static', filename='images/companies/microsoft.png') }}"
+                  alt="Microsoft"
+                />
+              </div>
+
+              <h3 class="company-name">Microsoft</h3>
+            </div>
+
+            <!-- Amazon -->
+
+            <div class="company-card simple-company-card">
+              <div class="company-logo">
+                <img
+                  src="{{ url_for('static', filename='images/companies/amazon.png') }}"
+                  alt="Amazon"
+                />
+              </div>
+
+              <h3 class="company-name">Amazon</h3>
+            </div>
+
+            <!-- Meta -->
+
+            <div class="company-card simple-company-card">
+              <div class="company-logo">
+                <img
+                  src="{{ url_for('static', filename='images/companies/meta.png') }}"
+                  alt="Meta"
+                />
+              </div>
+
+              <h3 class="company-name">Meta</h3>
+            </div>
+
+            <!-- Adobe -->
+
+            <div class="company-card simple-company-card">
+              <div class="company-logo">
+                <img
+                  src="{{ url_for('static', filename='images/companies/adobe.png') }}"
+                  alt="Adobe"
+                />
+              </div>
+
+              <h3 class="company-name">Adobe</h3>
+            </div>
+          </div>
+
+          <!--========== VIEW ALL ==========-->
+        </div>
+      </section>
+      <!--=========================================
+                FEATURED JOBS SECTION
+==========================================-->
+
+      <section class="jobs" id="jobs">
+        <div class="container">
+          <!--==============================
+                SECTION HEADER
+        ==============================-->
+
+          <div class="section-header">
+            <span class="section-badge"> Latest Opportunities </span>
+
+            <h2 class="section-title">Featured Tech Jobs</h2>
+
+            <p class="section-description">
+              Explore verified opportunities from top companies in AI, Software
+              Engineering, Cloud, Data Science, Cyber Security, DevOps and Full
+              Stack Development.
+            </p>
+          </div>
+
+          <!--==============================
+                JOB GRID
+        ==============================-->
+
+          <div class="jobs-grid">
+            {% for job in jobs %}
+
+            <div
+              class="job-card clickable-card"
+              data-url="{{ url_for('job_details', job_id=job.id) }}"
+            >
+              <!-- Featured Badge -->
+
+              {% if job.featured %}
+
+              <span class="featured-badge">
+                <i class="fa-solid fa-star"></i>
+
+                Featured
+              </span>
+
+              {% endif %}
+
+              <!--==============================
+                        HEADER
+                ==============================-->
+
+              <div class="job-header">
+                <div class="company-info">
+                  <div class="company-logo">
+                    <img
+                      src="{{ url_for('static', filename='images/companies/' ~ job.logo) }}"
+                      alt="{{ job.company }}"
+                    />
+                  </div>
+
+                  <div class="job-info">
+                    <h3 class="job-title">{{ job.title }}</h3>
+
+                    <div class="company-name">
+                      <i class="fa-solid fa-building"></i>
+
+                      {{ job.company }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="salary-badge">{{ job.salary }}</div>
+              </div>
+
+              <!--==============================
+                        JOB DETAILS
+                ==============================-->
+
+              <div class="job-details">
+                <div class="job-detail">
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <span>{{ job.location }}</span>
+                </div>
+
+                <div class="job-detail">
+                  <i class="fa-solid fa-briefcase"></i>
+
+                  <span>{{ job.type }}</span>
+                </div>
+
+                <div class="job-detail">
+                  <i class="fa-solid fa-user-tie"></i>
+
+                  <span>{{ job.experience }}</span>
+                </div>
+
+                <div class="job-detail">
+                  <i class="fa-solid fa-layer-group"></i>
+
+                  <span>{{ job.category }}</span>
+                </div>
+              </div>
+
+              <!--==============================
+                        DESCRIPTION
+                ==============================-->
+
+              <p class="job-description">{{ job.description }}</p>
+
+              <!--==============================
+                        SKILLS
+                ==============================-->
+
+              <div class="job-skills">
+                {% for skill in job.skills[:4] %}
+
+                <span class="skill-tag"> {{ skill }} </span>
+
+                {% endfor %}
+              </div>
+
+              <!--==============================
+                        FOOTER
+                ==============================-->
+
+              <div class="job-footer">
+                <button class="save-job">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <div class="job-actions">
+                  <a
+                    href="{{ url_for('job_details', job_id=job.id) }}"
+                    class="btn btn-outline"
+                    onclick="event.stopPropagation()"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+
+                    View
+                  </a>
+
+                  <a
+                    href="{{ job.apply_link }}"
+                    target="_blank"
+                    class="btn btn-primary"
+                    onclick="event.stopPropagation()"
+                  >
+                    Apply
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
 
             {% endfor %}
           </div>
-          <button class="save-job" data-id="{{ job.id }}">
-            <i class="fa-regular fa-heart"></i>
 
-            Save Job
-          </button>
+          <!--==============================
+                VIEW ALL
+        ==============================-->
 
-          <a href="/job/{{ job.id }}" class="btn"> View Details </a>
+          <div class="jobs-action">
+            <a href="{{ url_for('jobs') }}" class="btn btn-outline">
+              View All Jobs
+            </a>
+          </div>
         </div>
+      </section>
+      <!--=========================================
+                CATEGORIES SECTION
+==========================================-->
 
-        {% endfor %}
-      </div>
-    </section>
+      <section class="categories" id="categories">
+        <div class="container">
+          <!--========== SECTION HEADER ==========-->
 
-    <!-- ================= FOOTER ================= -->
+          <div class="section-header">
+            <span class="section-badge"> Explore Categories </span>
 
-    <!-- ================= FOOTER ================= -->
+            <h2 class="section-title">Browse Jobs by Technology</h2>
 
-    <footer id="footer">
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>AI Job Board</h3>
+            <p class="section-description">
+              Discover opportunities across the most in-demand technology
+              domains, from Artificial Intelligence to Cloud Computing and Cyber
+              Security.
+            </p>
+          </div>
 
-          <p>
-            A modern job portal developed using Flask, HTML, CSS, and
-            JavaScript. This project was built as part of a Software Engineer
-            assessment.
-          </p>
+          <!--========== CATEGORIES GRID ==========-->
+
+          <div class="categories-grid">
+            <!--========== AI ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+
+              <h3 class="category-title">Artificial Intelligence</h3>
+
+              <div class="category-count">240+ Jobs</div>
+
+              <p class="category-description">
+                Build intelligent systems using AI, NLP, Computer Vision, LLMs
+                and Generative AI technologies.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!--========== DATA SCIENCE ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+
+              <h3 class="category-title">Data Science</h3>
+
+              <div class="category-count">180+ Jobs</div>
+
+              <p class="category-description">
+                Analyze large datasets using Python, SQL, Machine Learning and
+                visualization tools.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!--========== FULL STACK ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+
+              <h3 class="category-title">Full Stack</h3>
+
+              <div class="category-count">320+ Jobs</div>
+
+              <p class="category-description">
+                Develop complete web applications using React, Angular, Node.js,
+                Java, Spring Boot and Flask.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!--========== CLOUD ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+
+              <h3 class="category-title">Cloud Computing</h3>
+
+              <div class="category-count">165+ Jobs</div>
+
+              <p class="category-description">
+                AWS, Azure, Google Cloud, Kubernetes, Docker and Infrastructure
+                Engineering roles.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!--========== DEVOPS ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+
+              <h3 class="category-title">DevOps</h3>
+
+              <div class="category-count">140+ Jobs</div>
+
+              <p class="category-description">
+                CI/CD, Kubernetes, Jenkins, Docker, Terraform and automation
+                engineering.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!--========== CYBER SECURITY ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+
+              <h3 class="category-title">Cyber Security</h3>
+
+              <div class="category-count">110+ Jobs</div>
+
+              <p class="category-description">
+                Ethical Hacking, SOC, Network Security, Threat Intelligence and
+                Information Security.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!--========== PYTHON ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-brands fa-python"></i>
+              </div>
+
+              <h3 class="category-title">Python Development</h3>
+
+              <div class="category-count">260+ Jobs</div>
+
+              <p class="category-description">
+                Backend development, automation, APIs, Flask, Django and AI
+                applications.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!--========== MOBILE ==========-->
+
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+              </div>
+
+              <h3 class="category-title">Mobile Development</h3>
+
+              <div class="category-count">95+ Jobs</div>
+
+              <p class="category-description">
+                Android, iOS, Flutter and React Native application development
+                opportunities.
+              </p>
+
+              <a href="#jobs" class="category-link">
+                Explore Jobs
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
+      </section>
+      <!--=========================================
+                WHY CHOOSE US SECTION
+==========================================-->
 
-        <div class="footer-section">
-          <h3>About</h3>
+      <section class="why" id="why">
+        <div class="container">
+          <!--========== SECTION HEADER ==========-->
 
-          <p>Developed by <strong>Lazar Mura</strong></p>
+          <div class="section-header">
+            <span class="section-badge"> Why Choose AI Job Board </span>
 
-          <p>B.Tech – Artificial Intelligence & Data Science</p>
+            <h2 class="section-title">
+              Everything You Need to Land Your Dream Job
+            </h2>
+
+            <p class="section-description">
+              Our platform combines AI-powered job matching, verified employers,
+              and an easy application process to help you find the perfect
+              opportunity.
+            </p>
+          </div>
+
+          <!--========== FEATURES GRID ==========-->
+
+          <div class="why-grid">
+            <!--========== FEATURE 1 ==========-->
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+
+              <h3 class="why-title">AI Job Matching</h3>
+
+              <p class="why-description">
+                Our intelligent recommendation system matches your skills with
+                the most relevant technology jobs.
+              </p>
+
+              <ul class="why-list">
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Personalized recommendations
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Smart skill matching
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Faster job discovery
+                </li>
+              </ul>
+            </div>
+
+            <!--========== FEATURE 2 ==========-->
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+
+              <h3 class="why-title">Verified Companies</h3>
+
+              <p class="why-description">
+                Every employer on our platform is verified, ensuring a safe,
+                reliable, and trustworthy job search experience.
+              </p>
+
+              <ul class="why-list">
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Trusted employers
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Genuine openings
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Scam-free platform
+                </li>
+              </ul>
+            </div>
+
+            <!--========== FEATURE 3 ==========-->
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-file-arrow-up"></i>
+              </div>
+
+              <h3 class="why-title">One-Click Apply</h3>
+
+              <p class="why-description">
+                Upload your resume once and apply to multiple jobs quickly
+                without filling long application forms.
+              </p>
+
+              <ul class="why-list">
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Resume upload
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Quick applications
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Time-saving process
+                </li>
+              </ul>
+            </div>
+
+            <!--========== FEATURE 4 ==========-->
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+
+              <h3 class="why-title">Career Growth</h3>
+
+              <p class="why-description">
+                Find internships, fresher opportunities, and experienced
+                positions to accelerate your professional journey.
+              </p>
+
+              <ul class="why-list">
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Internship opportunities
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Career guidance
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Skill development
+                </li>
+              </ul>
+            </div>
+
+            <!--========== FEATURE 5 ==========-->
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+
+              <h3 class="why-title">Real-Time Updates</h3>
+
+              <p class="why-description">
+                Stay informed with the latest openings from leading companies as
+                soon as they are published.
+              </p>
+
+              <ul class="why-list">
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Daily job updates
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Instant notifications
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Never miss an opportunity
+                </li>
+              </ul>
+            </div>
+
+            <!--========== FEATURE 6 ==========-->
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+
+              <h3 class="why-title">Dedicated Support</h3>
+
+              <p class="why-description">
+                Our support team is always available to help you throughout your
+                job search journey.
+              </p>
+
+              <ul class="why-list">
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Email support
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Career assistance
+                </li>
+
+                <li>
+                  <i class="fa-solid fa-check"></i>
+                  Fast response time
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </section>
+      <!--=========================================
+                TESTIMONIALS SECTION
+==========================================-->
 
-        <div class="footer-section">
-          <h3>Contact</h3>
+      <section class="testimonials" id="testimonials">
+        <div class="container">
+          <!--========== SECTION HEADER ==========-->
 
-          <p>
-            <i class="fa-solid fa-envelope"></i>
-            lazarmura54@gmail.com
-          </p>
+          <div class="section-header">
+            <span class="section-badge"> Success Stories </span>
 
-          <p>
-            <i class="fa-solid fa-phone"></i>
-            +91 7287970564
-          </p>
+            <h2 class="section-title">What Our Users Say</h2>
+
+            <p class="section-description">
+              Thousands of job seekers have found their dream careers through AI
+              Job Board. Here's what they have to say.
+            </p>
+          </div>
+
+          <!--========== TESTIMONIALS GRID ==========-->
+
+          <div class="testimonials-grid">
+            <!--========== TESTIMONIAL 1 ==========-->
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="{{ url_for('static', filename='images/testimonials/user1.png') }}"
+                    alt="Rahul Sharma"
+                  />
+                </div>
+
+                <div class="testimonial-user">
+                  <h3>Rahul Sharma</h3>
+
+                  <span>Software Engineer • Google</span>
+                </div>
+              </div>
+
+              <div class="testimonial-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                AI Job Board helped me find my dream Software Engineer role
+                within two weeks. The job recommendations were incredibly
+                accurate.
+              </p>
+
+              <div class="testimonial-footer">
+                <span class="testimonial-date"> June 2026 </span>
+
+                <span class="testimonial-platform">
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Verified User
+                </span>
+              </div>
+            </div>
+
+            <!--========== TESTIMONIAL 2 ==========-->
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="{{ url_for('static', filename='images/testimonials/user2.png') }}"
+                    alt="Priya Reddy"
+                  />
+                </div>
+
+                <div class="testimonial-user">
+                  <h3>Priya Reddy</h3>
+
+                  <span>Data Scientist • Microsoft</span>
+                </div>
+              </div>
+
+              <div class="testimonial-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                The platform is clean, fast, and easy to use. I found multiple
+                Data Science opportunities that matched my skills.
+              </p>
+
+              <div class="testimonial-footer">
+                <span class="testimonial-date"> May 2026 </span>
+
+                <span class="testimonial-platform">
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Verified User
+                </span>
+              </div>
+            </div>
+
+            <!--========== TESTIMONIAL 3 ==========-->
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="{{ url_for('static', filename='images/testimonials/user3.png') }}"
+                    alt="Arjun Kumar"
+                  />
+                </div>
+
+                <div class="testimonial-user">
+                  <h3>Arjun Kumar</h3>
+
+                  <span>Cloud Engineer • Amazon</span>
+                </div>
+              </div>
+
+              <div class="testimonial-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Uploading my resume once and applying to multiple companies
+                saved me a huge amount of time.
+              </p>
+
+              <div class="testimonial-footer">
+                <span class="testimonial-date"> April 2026 </span>
+
+                <span class="testimonial-platform">
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Verified User
+                </span>
+              </div>
+            </div>
+
+            <!--========== TESTIMONIAL 4 ==========-->
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="{{ url_for('static', filename='images/testimonials/user4.png') }}"
+                    alt="Sneha Patel"
+                  />
+                </div>
+
+                <div class="testimonial-user">
+                  <h3>Sneha Patel</h3>
+
+                  <span>Frontend Developer • Adobe</span>
+                </div>
+              </div>
+
+              <div class="testimonial-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                I loved the clean interface and verified job listings. The
+                platform made my job search stress-free.
+              </p>
+
+              <div class="testimonial-footer">
+                <span class="testimonial-date"> March 2026 </span>
+
+                <span class="testimonial-platform">
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Verified User
+                </span>
+              </div>
+            </div>
+
+            <!--========== TESTIMONIAL 5 ==========-->
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="{{ url_for('static', filename='images/testimonials/user5.png') }}"
+                    alt="Kiran Rao"
+                  />
+                </div>
+
+                <div class="testimonial-user">
+                  <h3>Kiran Rao</h3>
+
+                  <span>DevOps Engineer • Oracle</span>
+                </div>
+              </div>
+
+              <div class="testimonial-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                Excellent platform with verified companies and fresh openings.
+                Highly recommended for tech professionals.
+              </p>
+
+              <div class="testimonial-footer">
+                <span class="testimonial-date"> February 2026 </span>
+
+                <span class="testimonial-platform">
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Verified User
+                </span>
+              </div>
+            </div>
+
+            <!--========== TESTIMONIAL 6 ==========-->
+
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-avatar">
+                  <img
+                    src="{{ url_for('static', filename='images/testimonials/user6.png') }}"
+                    alt="Ananya Gupta"
+                  />
+                </div>
+
+                <div class="testimonial-user">
+                  <h3>Ananya Gupta</h3>
+
+                  <span>AI Engineer • NVIDIA</span>
+                </div>
+              </div>
+
+              <div class="testimonial-rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <p class="testimonial-text">
+                The AI recommendations matched my experience perfectly. I
+                received interview calls within days of applying.
+              </p>
+
+              <div class="testimonial-footer">
+                <span class="testimonial-date"> January 2026 </span>
+
+                <span class="testimonial-platform">
+                  <i class="fa-solid fa-circle-check"></i>
+
+                  Verified User
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!--========== CTA BUTTON ==========-->
+
+          <div class="testimonials-action">
+            <a href="#jobs" class="btn btn-primary">
+              Start Your Success Story
+            </a>
+          </div>
         </div>
+      </section>
+      <!--=========================================
+                FAQ SECTION
+==========================================-->
 
-        <div class="footer-section">
-          <h3>Connect</h3>
+      <section class="faq" id="faq">
+        <div class="container">
+          <!--========== SECTION HEADER ==========-->
 
-          <a href="https://github.com/lazarmura54-arch" target="_blank">
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
+          <div class="section-header">
+            <span class="section-badge"> Frequently Asked Questions </span>
 
-          <br /><br />
+            <h2 class="section-title">Got Questions? We've Got Answers</h2>
 
-          <a
-            href="https://www.linkedin.com/in/mura-lazar-949031269/"
-            target="_blank"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-            LinkedIn
-          </a>
+            <p class="section-description">
+              Find answers to the most commonly asked questions about AI Job
+              Board, job applications, resume uploads, and hiring.
+            </p>
+          </div>
+
+          <!--========== FAQ WRAPPER ==========-->
+
+          <div class="faq-wrapper">
+            <!-- FAQ 1 -->
+
+            <div class="faq-item active">
+              <button class="faq-question">
+                <h3>How do I apply for a job?</h3>
+
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </button>
+
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Browse available jobs, select the position that matches your
+                    skills, and click the <strong>Apply Now</strong> button.
+                    You'll be redirected to the company's application page.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <h3>Is AI Job Board free to use?</h3>
+
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </button>
+
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Yes. AI Job Board is completely free for job seekers. You
+                    can search jobs, upload your resume, and apply without
+                    paying any fees.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <h3>Can I upload my resume?</h3>
+
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </button>
+
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Yes. Upload your resume once and quickly apply to multiple
+                    jobs without repeatedly entering the same information.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <h3>Are the jobs verified?</h3>
+
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </button>
+
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Yes. Every job listing is reviewed before publication to
+                    help ensure that opportunities come from genuine employers.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <h3>Can freshers apply?</h3>
+
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </button>
+
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Absolutely. Many listings are specifically intended for
+                    fresh graduates, interns, and entry-level software
+                    engineers.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <h3>Can I search for remote jobs?</h3>
+
+                <span class="faq-icon">
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+              </button>
+
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p>
+                    Yes. Use the search filters to find remote, hybrid, or
+                    on-site positions based on your preferences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--========== FAQ CTA ==========-->
+
+          <div class="faq-action">
+            <a href="#contact" class="btn btn-primary">
+              Still Have Questions?
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
+      <!--=========================================
+                CTA SECTION
+==========================================-->
 
-      <hr />
+      <section class="cta" id="upload">
+        <!-- Floating Shapes -->
 
-      <p class="copyright">© 2026 Lazar Mura. All Rights Reserved.</p>
-    </footer>
+        <div class="cta-shape one"></div>
+        <div class="cta-shape two"></div>
+        <div class="cta-shape three"></div>
+        <div class="cta-shape four"></div>
+
+        <div class="container">
+          <div class="cta-wrapper">
+            <!--========== BADGE ==========-->
+
+            <div class="cta-badge">
+              <i class="fa-solid fa-bolt"></i>
+
+              <span>Your Dream Career Starts Here</span>
+            </div>
+
+            <!--========== TITLE ==========-->
+
+            <h2 class="cta-title">
+              Ready to Take the Next Step in Your Tech Career?
+            </h2>
+
+            <!--========== DESCRIPTION ==========-->
+
+            <p class="cta-description">
+              Join thousands of software engineers, AI professionals, cloud
+              engineers, data scientists, and fresh graduates who use AI Job
+              Board to discover exciting career opportunities every day.
+            </p>
+
+            <!--========== CTA BUTTONS ==========-->
+
+            <div class="cta-buttons">
+              <a href="#jobs" class="btn btn-primary">
+                <i class="fa-solid fa-briefcase"></i>
+
+                Browse Jobs
+              </a>
+
+              <button class="btn btn-outline" id="resumeUploadBtn">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                Upload Resume
+              </button>
+            </div>
+
+            <!-- Hidden File Upload -->
+
+            <input
+              type="file"
+              id="resumeUpload"
+              accept=".pdf,.doc,.docx"
+              hidden
+            />
+          </div>
+        </div>
+      </section>
+      <!--=========================================
+                TECH STACK SECTION
+==========================================-->
+
+      <section class="tech" id="tech">
+        <div class="container">
+          <!--========== SECTION HEADER ==========-->
+
+          <div class="section-header">
+            <span class="section-badge"> Powered By Modern Technologies </span>
+
+            <h2 class="section-title">
+              Built With Industry Standard Technologies
+            </h2>
+
+            <p class="section-description">
+              AI Job Board is developed using modern web technologies,
+              cloud-ready architecture, and scalable development practices.
+            </p>
+          </div>
+
+          <!--========== TECH GRID ==========-->
+
+          <div class="tech-grid">
+            <!-- Python -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-brands fa-python"></i>
+              </div>
+
+              <h3 class="tech-title">Python</h3>
+
+              <p class="tech-description">
+                Backend logic, automation, AI integrations and data processing.
+              </p>
+
+              <span class="tech-badge"> Backend </span>
+            </div>
+
+            <!-- Flask -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-solid fa-fire"></i>
+              </div>
+
+              <h3 class="tech-title">Flask</h3>
+
+              <p class="tech-description">
+                Lightweight Python framework powering the entire application.
+              </p>
+
+              <span class="tech-badge"> Framework </span>
+            </div>
+
+            <!-- HTML -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+
+              <h3 class="tech-title">HTML5</h3>
+
+              <p class="tech-description">
+                Semantic structure for fast, accessible, modern web pages.
+              </p>
+
+              <span class="tech-badge"> Markup </span>
+            </div>
+
+            <!-- CSS -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-brands fa-css3-alt"></i>
+              </div>
+
+              <h3 class="tech-title">CSS3</h3>
+
+              <p class="tech-description">
+                Responsive layouts, animations and premium UI components.
+              </p>
+
+              <span class="tech-badge"> Styling </span>
+            </div>
+
+            <!-- JavaScript -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-brands fa-js"></i>
+              </div>
+
+              <h3 class="tech-title">JavaScript</h3>
+
+              <p class="tech-description">
+                Dynamic interactions, filtering, sliders and live search.
+              </p>
+
+              <span class="tech-badge"> Frontend </span>
+            </div>
+
+            <!-- PostgreSQL -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-solid fa-database"></i>
+              </div>
+
+              <h3 class="tech-title">PostgreSQL</h3>
+
+              <p class="tech-description">
+                Reliable relational database for scalable applications.
+              </p>
+
+              <span class="tech-badge"> Database </span>
+            </div>
+
+            <!-- GitHub -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+
+              <h3 class="tech-title">GitHub</h3>
+
+              <p class="tech-description">
+                Version control, collaboration and CI/CD deployment workflows.
+              </p>
+
+              <span class="tech-badge"> DevOps </span>
+            </div>
+
+            <!-- AI -->
+
+            <div class="tech-card">
+              <div class="tech-icon">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+
+              <h3 class="tech-title">Artificial Intelligence</h3>
+
+              <p class="tech-description">
+                Smart recommendations and future-ready AI-powered job matching.
+              </p>
+
+              <span class="tech-badge"> AI Powered </span>
+            </div>
+          </div>
+
+          <!--========== SECTION BUTTON ==========-->
+
+          <div class="tech-action">
+            <a href="#jobs" class="btn btn-primary"> Explore Jobs </a>
+          </div>
+        </div>
+      </section>
+      <!--=========================================
+                    FOOTER
+==========================================-->
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <!-- ================= LEFT ================= -->
+
+            <div class="footer-column">
+              <div class="footer-logo">
+                <img
+                  src="{{ url_for('static', filename='images/logo/ai-logo.png') }}"
+                  alt="AI Job Board"
+                />
+
+                <h3>AI Job Board</h3>
+              </div>
+
+              <p>
+                Discover AI, Software Engineering, Cloud, DevOps, Data Science
+                and Full Stack opportunities from leading technology companies.
+              </p>
+            </div>
+
+            <!-- ================= ABOUT ================= -->
+
+            <div class="footer-column">
+              <h3>About</h3>
+
+              <p>Developed by <strong>Lazar Mura</strong></p>
+
+              <p>B.Tech – Artificial Intelligence & Data Science</p>
+
+              <p>Built using Flask, HTML, CSS & JavaScript</p>
+            </div>
+
+            <!-- ================= CONTACT ================= -->
+
+            <div class="footer-column">
+              <h3>Contact</h3>
+
+              <div class="footer-contact">
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  <span>lazarmura54@gmail.com</span>
+                </p>
+
+                <p>
+                  <i class="fas fa-phone"></i>
+                  <span>+91 7287970564</span>
+                </p>
+
+                <p>
+                  <i class="fas fa-location-dot"></i>
+                  <span>Bengaluru, India</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- ================= CONNECT ================= -->
+
+            <div class="footer-column">
+              <h3>Connect</h3>
+
+              <div class="footer-social">
+                <a href="https://github.com/lazarmura54-arch" target="_blank">
+                  <i class="fab fa-github"></i>
+
+                  <span>GitHub</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/mura-lazar-949031269/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin"></i>
+
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="footer-bottom">
+            © 2026 <strong>Lazar Mura</strong>. All Rights Reserved.
+          </div>
+        </div>
+      </footer>
+      <!--=========================================
+            BACK TO TOP BUTTON
+==========================================-->
+
+      <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </main>
+
+    <!--=========================================
+                    JAVASCRIPT FILES
+    ==========================================-->
+
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/hero-slider.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
 
     <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+
     <script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/faq.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='js/resume-upload.js') }}"></script>
+
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   </body>
 </html>
